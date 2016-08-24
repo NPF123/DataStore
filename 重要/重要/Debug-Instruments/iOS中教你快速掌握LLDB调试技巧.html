@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-status-bar-style" content="yes">
+    <script src="http://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!--link( rel="stylesheet" href="http://c.csdnimg.cn/public/common/toolbar/css/index.css" )-->
+    <link rel="stylesheet" href="http://csdnimg.cn/public/common/libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="http://csdnimg.cn/public/static/css/avatar.css">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <!-- [if IE 7]-->
+    <!--link( rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" )-->
+    <!-- [endif]-->
+    <link rel="stylesheet" href="/static/css/main.css">
+    <!-- [if lt IE 9]-->
+    <script src="/static/js/libs/html5shiv.min.js"></script>
+    <!-- [endif]-->
+    <title>iOS中教你快速掌握LLDB调试技巧</title>
+    <script type="text/javascript" src="/static/js/apps/blog_mobile.js"></script>
+</head>
+<body>
+    
+<script language="javascript" type="text/javascript" src="http://ads.csdn.net/js/async_new.js"></script>
+
+<script language='JavaScript' type='text/javascript' src='http://download.csdn.net/js/jquery.cookie.js'></script>
+<script type="text/javascript" src="http://c.csdnimg.cn/rabbit/search-service/main.js"></script>
+<script type="text/javascript">
+    var fileName = '51316510';
+    var commentscount = 1;
+    var islock = false;
+    var currentUserName='';
+    
+</script>
+
+<script  type="text/javascript" src="/static/js/digg.js"></script>
+
+
+<div class="blog_main">
+      <div class="blog_top_wrap">
+        <div class="blog_top"><i id="menu_J" class="iconfont icon_l">&#xe600;</i>
+            <form  method="get" action="/search/index" id="searchform">
+    <i id="search_J" class="iconfont icon_r">&#xe601;</i>
+    <div id="search_c_J" class="search">
+         <input type="text" placeholder="请输入" id="search" name="keyword" page="1" value=""><i class="iconfont icon_search">&#xe601;</i><i class="iconfont icon_close">&#xe60c;</i>
+    </div>
+</form>
+<script  type="text/javascript" src="/static/js/search.js"></script>
+
+
+          <h2 class="blog_top_t">CSDN博客</h2>
+        </div>
+      </div>
+      <div class="main_list">
+        <div class="blog_article">
+          <div class="blog_article_t">
+            <div class="article_l"><a href="/blog/index?username=BaiHuaXiu123"><img src="http://avatar.csdn.net/B/A/8/1_baihuaxiu123.jpg" alt="img"></a>
+                <a href="/blog/index?username=BaiHuaXiu123" class="article_user">BaiHuaXiu123</a></div>
+            <div class="article_r">
+                    <i class="iconfont expert">&#xe614;</i><span>博客专家</span>
+            </div>
+          </div>
+          <div class="blog_article_c clearfix">
+            <h3 class="article_t">iOS中教你快速掌握LLDB调试技巧</h3>
+            <p class="date"><i>发表于</i><em>2016/5/4 17:14:40  &nbsp;</em><i>2847</i><span>人阅读</span></p>
+            <p class="category_p">
+                    分类：
+                        <span>iOS开发</span>
+            </p>
+             
+<div class="article_c">
+        <div class="markdown_views"><h1 id="摘要">摘要</h1>
+
+<p>LLDB是Xcode默认的调试器，它与LLVM编译器一起，带给我们更丰富的流程控制和数据检测的调试功能。平时用Xcode运行程序，实际走的都是LLDB。熟练使用LLDB，可以让你debug事半功倍。</p>
+
+
+
+<h1 id="lldb控制台">LLDB控制台</h1>
+
+<p>Xcode中内嵌了LLDB控制台，在Xcode中代码的下方，我们可以看到LLDB控制台。 <br>
+<img src="http://img.blog.csdn.net/20160504160941835" alt="这里写图片描述" title=""></p>
+
+<p>LLDB控制台平时会输出一些log信息。如果我们想输入命令调试，必须让程序进入暂停状态。让程序进入暂停状态的方式主要有2种： <br>
+1. 断点或者watchpoint: 在代码中设置一个断点（watchpoint），当程序运行到断点位置的时候，会进入stop状态 <br>
+2. 直接暂停，控制台上方有一个暂停按钮，上图红框已标出，点击即可暂停程序</p>
+
+
+
+<h1 id="lldb语法">LLDB语法</h1>
+
+<p>在使用LLDB之前，我们来先看看LLDB的语法，了解语法可以帮助我们清晰的使用LLDB:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs r">&lt;command&gt; [&lt;subcommand&gt; [&lt;subcommand&gt;<span class="hljs-keyword">...</span>]] &lt;action&gt; [-options [option-value]] [argument [argument...]]</code></pre>
+
+<p>一眼看上去可能比较迷茫，给大家解释一下：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">1. <span class="hljs-tag">&lt;<span class="hljs-title">command</span>&gt;</span>(命令)和<span class="hljs-tag">&lt;<span class="hljs-title">subcommand</span>&gt;</span>(子命令)：LLDB调试命令的名称。命令和子命令按层级结构来排列：一个命令对象为跟随其的子命令对象创建一个上下文，子命令又为其子命令创建一个上下文，依此类推。
+2. <span class="hljs-tag">&lt;<span class="hljs-title">action</span>&gt;</span>：执行命令的操作
+3. <span class="hljs-tag">&lt;<span class="hljs-title">options</span>&gt;</span>：命令选项
+4. <span class="hljs-tag">&lt;<span class="hljs-title">arguement</span>&gt;</span>：命令的参数
+5. []：表示命令是可选的，可以有也可以没有.</code></pre>
+
+<p>举个例子，假设我们给main方法设置一个断点，我们使用下面的命令： <br>
+<img src="http://img.blog.csdn.net/20160504171833615" alt="这里写图片描述" title=""></p>
+
+<p>这个命令对应到上面的语法就是：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs markdown"><span class="hljs-bullet">1. </span>command: breakpoint 表示断点命令
+<span class="hljs-bullet">2. </span>action: set 表示设置断点
+<span class="hljs-bullet">3. </span>option: -n 表示根据方法name设置断点
+<span class="hljs-bullet">4. </span>arguement: mian 表示方法名为mian</code></pre>
+
+
+
+<h1 id="原始raw命令">原始(raw)命令</h1>
+
+<p>LLDB支持不带命令选项(options)的原始(raw)命令，原始命令会将命令后面的所有东西当做参数(arguement)传递。不过很多原始命令也可以带命令选项，当你使用命令选项的时候，需要在命令选项后面加–区分命令选项和参数。</p>
+
+<p>e.g: 常用的expression就是raw命令，一般情况下我们使用expression打印一个东西是这样的：</p>
+
+<p><img src="http://img.blog.csdn.net/20160504172058002" alt="这里写图片描述" title=""></p>
+
+<p>当我们想打印一个对象的时候。需要使用-O命令选项，我们应该用–将命令选项和参数区分：</p>
+
+<p><img src="http://img.blog.csdn.net/20160504172411159" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="唯一匹配原则">唯一匹配原则</h1>
+
+<p>LLDB的命令遵循唯一匹配原则：假如根据前n个字母已经能唯一匹配到某个命令，则只写前n个字母等效于写下完整的命令。 <br>
+e.g: 前面提到我设置断点的命令，我们可以使用唯一匹配原则简写，下面2条命令等效：</p>
+
+<p><img src="http://img.blog.csdn.net/20160504172526253" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="lldbinit">~/.lldbinit</h1>
+
+<p>LLDB有了一个启动时加载的文件~/.lldbinit，每次启动都会加载。所以一些初始化的事儿，我们可以写入~/.lldbinit中，比如给命令定义别名等。但是由于这时候程序还没有真正运行，也有部分操作无法在里面玩，比如设置断点。</p>
+
+
+
+<h1 id="lldb命令expression">LLDB命令,expression</h1>
+
+<p>expression命令的作用是执行一个表达式，并将表达式返回的结果输出。expression的完整语法是这样的：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs xml">expression <span class="hljs-tag">&lt;<span class="hljs-title">cmd-options</span>&gt;</span> -- <span class="hljs-tag">&lt;<span class="hljs-title">expr</span>&gt;</span></code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs brainfuck"><span class="hljs-comment">1</span><span class="hljs-string">.</span> &lt;<span class="hljs-comment">cmd</span><span class="hljs-literal">-</span><span class="hljs-comment">options</span>&gt;<span class="hljs-comment">：命令选项，一般情况下使用默认的即可，不需要特别标明。</span>
+<span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">:</span> <span class="hljs-comment">命令选项结束符，表示所有的命令选项已经设置完毕，如果没有命令选项，</span><span class="hljs-literal">-</span><span class="hljs-literal">-</span><span class="hljs-comment">可以省略</span>
+<span class="hljs-comment">2</span><span class="hljs-string">.</span> &lt;<span class="hljs-comment">expr</span>&gt;<span class="hljs-comment">:</span> <span class="hljs-comment">要执行的表达式</span>
+<span class="hljs-comment">说expression是LLDB里面最重要的命令都不为过。因为他能实现2个功能。</span></code></pre>
+
+<p>1) 执行某个表达式。 我们在代码运行过程中，可以通过执行某个表达式来动态改变程序运行的轨迹。 假如我们在运行过程中，突然想把self.view颜色改成红色，看看效果。我们不必写下代码，重新run，只需暂停程序，用expression改变颜色，再刷新一下界面，就能看到效果</p>
+
+<p>// 改变颜色 <br>
+<img src="http://img.blog.csdn.net/20160504173426991" alt="这里写图片描述" title=""> <br>
+  // 刷新界面 <br>
+  <img src="http://img.blog.csdn.net/20160504173546622" alt="这里写图片描述" title=""></p>
+
+<p>2) 将返回值输出。 也就是说我们可以通过expression来打印东西。 假如我们想打印self.view： <br>
+<img src="http://img.blog.csdn.net/20160504173708133" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="p-print-call">p &amp; print &amp; call</h1>
+
+<p>一般情况下，我们直接用expression还是用得比较少的，更多时候我们用的是p、print、call。这三个命令其实都是expression –的别名（–表示不再接受命令选项，详情见前面原始(raw）命令这一节）</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs markdown"><span class="hljs-bullet">1. </span>print: 打印某个东西，可以是变量和表达式
+<span class="hljs-bullet">2. </span>p: 可以看做是print的简写
+<span class="hljs-bullet">3. </span>call: 调用某个方法。</code></pre>
+
+<p>表面上看起来他们可能有不一样的地方，实际都是执行某个表达式（变量也当做表达式），将执行的结果输出到控制台上。所以你可以用p调用某个方法，也可以用call打印东西 e.g: 下面代码效果相同：</p>
+
+<p><img src="http://img.blog.csdn.net/20160504173918860" alt="这里写图片描述" title=""></p>
+
+<p>根据唯一匹配原则，如果你没有自己添加特殊的命令别名。e也可以表示expression的意思。原始命令默认没有命令选项，所以e也能带给你同样的效果.</p>
+
+
+
+<h1 id="po">po</h1>
+
+<p>我们知道，OC里所有的对象都是用指针表示的，所以一般打印的时候，打印出来的是对象的指针，而不是对象本身。如果我们想打印对象。我们需要使用命令选项:-O。为了更方便的使用，LLDB为expression -O –定义了一个别名：po</p>
+
+<p><img src="http://img.blog.csdn.net/20160504174138103" alt="这里写图片描述" title=""></p>
+
+<p>还有其他很多命令选项，不过我们一般用得比较少，所以我就不具体的一一介绍了，如果想了解，在LLDB控制台上输入：help expression即可查到expression所有的信息</p>
+
+
+
+<h1 id="thread之thread-backtrace-bt">thread之thread backtrace &amp; bt</h1>
+
+<p>有时候我们想要了解线程堆栈信息，可以使用thread backtrace thread backtrace作用是将线程的堆栈打印出来。我们来看看他的语法</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-keyword">thread</span> backtrace <span class="hljs-preprocessor">[</span><span class="hljs-attribute">-c</span> <span class="hljs-subst">&lt;</span>count<span class="hljs-subst">&gt;</span><span class="hljs-preprocessor">]</span><span class="hljs-markup"> </span><span class="hljs-preprocessor">[</span><span class="hljs-attribute">-s</span> <span class="hljs-subst">&lt;</span>frame<span class="hljs-attribute">-index</span><span class="hljs-subst">&gt;</span><span class="hljs-preprocessor">]</span><span class="hljs-markup"> </span><span class="hljs-preprocessor">[</span><span class="hljs-attribute">-e</span> <span class="hljs-subst">&lt;</span>boolean<span class="hljs-subst">&gt;</span><span class="hljs-preprocessor">]</span><span class="hljs-markup"></span></code></pre>
+
+<p>thread backtrace后面跟的都是命令选项：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs haml">-<span class="ruby">c：设置打印堆栈的帧数(frame)
+</span>-<span class="ruby">s：设置从哪个帧(frame)开始打印
+</span>-<span class="ruby">e：是否显示额外的回溯</span></code></pre>
+
+<p>实际上这些命令选项我们一般不需要使用。 <br>
+e.g: 当发生crash的时候，我们可以使用thread backtrace查看堆栈调用 <br>
+<img src="http://img.blog.csdn.net/20160504174316745" alt="这里写图片描述" title=""></p>
+
+<p>我们可以看到crash发生在-[ViewController viewDidLoad]中的第23行，只需检查这行代码是不是干了什么非法的事儿就可以了。</p>
+
+<p>LLDB还为backtrace专门定义了一个别名：bt，他的效果与thread backtrace相同，如果你不想写那么长一串字母，直接写下bt即可:</p>
+
+<p><img src="http://img.blog.csdn.net/20160504174427741" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="thread-return">thread return</h1>
+
+<p>Debug的时候，也许会因为各种原因，我们不想让代码执行某个方法，或者要直接返回一个想要的值。这时候就该thread return上场了。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs fsharp">thread <span class="hljs-keyword">return</span> <span class="hljs-annotation">[&lt;expr&gt;]</span></code></pre>
+
+<p>thread return可以接受一个表达式，调用命令之后直接从当前的frame返回表达式的值。</p>
+
+<p>e.g: 我们有一个someMethod方法，默认情况下是返回YES。我们想要让他返回NO <br>
+<img src="http://img.blog.csdn.net/20160504162224479" alt="这里写图片描述" title=""></p>
+
+<p>我们只需在方法的开始位置加一个断点，当程序中断的时候，输入命令即可: <br>
+<img src="http://img.blog.csdn.net/20160504175100732" alt="这里写图片描述" title=""> <br>
+效果相当于在断点位置直接调用return NO;，不会执行断点后面的代码</p>
+
+
+
+<h1 id="c-n-s-finish">c &amp; n &amp; s &amp; finish</h1>
+
+<p>一般在调试程序的时候，我们经常用到下面这4个按钮： <br>
+<img src="http://img.blog.csdn.net/20160504162431354" alt="这里写图片描述" title=""></p>
+
+<p>用触摸板的孩子们可能会觉得点击这4个按钮比较费劲。其实LLDB命令也可以完成上面的操作，而且如果不输入命令，直接按Enter键，LLDB会自动执行上次的命令。按一下Enter就能达到我们想要的效果，有木有顿时感觉逼格满满的！！！ 我们来看看对应这4个按钮的LLDB命令：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs glsl"><span class="hljs-number">1.</span> c/ <span class="hljs-keyword">continue</span>/ thread <span class="hljs-keyword">continue</span>: 这三个命令效果都等同于上图中第一个按钮的。表示程序继续运行
+<span class="hljs-number">2.</span> n/ next/ thread <span class="hljs-built_in">step</span>-over: 这三个命令效果等同于上图第二个按钮。表示单步运行
+<span class="hljs-number">3.</span> s/ <span class="hljs-built_in">step</span>/ thread <span class="hljs-built_in">step</span>-<span class="hljs-keyword">in</span>: 这三个命令效果等同于上图第三个按钮。表示进入某个方法
+<span class="hljs-number">4.</span> finish/ <span class="hljs-built_in">step</span>-<span class="hljs-keyword">out</span>: 这两个命令效果等同于第四个按钮。表示直接走完当前方法，返回到上层frame</code></pre>
+
+
+
+<h1 id="thread其他不常用的命令">thread其他不常用的命令</h1>
+
+<p>thread 相关的还有其他一些不常用的命令，这里就简单介绍一下即可，如果需要了解更多，可以使用命令help thread查阅</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso"><span class="hljs-number">1.</span> <span class="hljs-keyword">thread</span> jump: 直接让程序跳到某一行。由于ARC下编译器实际插入了不少retain，release命令。跳过一些代码不执行很可能会造成对象内存混乱发生crash。
+<span class="hljs-number">2.</span> <span class="hljs-keyword">thread</span> <span class="hljs-built_in">list</span>: 列出所有的线程
+<span class="hljs-number">3.</span> <span class="hljs-keyword">thread</span> <span class="hljs-keyword">select</span>: 选择某个线程
+<span class="hljs-number">4.</span> <span class="hljs-keyword">thread</span> until: 传入一个line的参数，让程序执行到这行的时候暂停
+<span class="hljs-number">5.</span> <span class="hljs-keyword">thread</span> info: 输出当前线程的信息</code></pre>
+
+
+
+<h1 id="frame">frame</h1>
+
+<p>前面我们提到过很多次frame（帧）。可能有的朋友对frame这个概念还不太了解。随便打个断点</p>
+
+<p><img src="http://img.blog.csdn.net/20160504162726387" alt="这里写图片描述" title=""> <br>
+我们在控制台上输入命令bt，可以打印出来所有的frame。如果仔细观察，这些frame和左边红框里的堆栈是一致的。平时我们看到的左边的堆栈就是frame。</p>
+
+
+
+<h1 id="frame-variable">frame variable</h1>
+
+<p>平时Debug的时候我们经常做的事就是查看变量的值，通过frame variable命令，可以打印出当前frame的所有变量 <br>
+<img src="http://img.blog.csdn.net/20160504175319733" alt="这里写图片描述" title=""> <br>
+可以看到，他将self,_cmd,ret,a等本地变量都打印了出来</p>
+
+<p>如果我们要需要打印指定变量，也可以给frame variable传入参数:</p>
+
+<p><img src="http://img.blog.csdn.net/20160504175441989" alt="这里写图片描述" title=""></p>
+
+<p>不过frame variable只接受变量作为参数，不接受表达式，也就是说我们无法使用frame variable self.string，因为self.string是调用string的getter方法。所以一般打印指定变量，我更喜欢用p或者po。</p>
+
+
+
+<h1 id="其他不常用命令">其他不常用命令</h1>
+
+<p>一般frame variable打印所有变量用得比较多，frame还有2个不怎么常用的命令：</p>
+
+<p>frame info: 查看当前frame的信息</p>
+
+<p><img src="http://img.blog.csdn.net/20160504175609250" alt="这里写图片描述" title=""></p>
+
+<p>frame select: 选择某个frame</p>
+
+<p><img src="http://img.blog.csdn.net/20160504175904058" alt="这里写图片描述" title=""></p>
+
+<p>当我们选择frame 1的时候，他会把frame1的信息和代码打印出来。不过一般我都是直接在Xcode左边点击某个frame，这样更方便</p>
+
+
+
+<h1 id="breakpoint">breakpoint</h1>
+
+<p>调试过程中，我们用得最多的可能就是断点了。LLDB中的断点命令也非常强大</p>
+
+
+
+<h1 id="breakpoint-set">breakpoint set</h1>
+
+<p>breakpoint set命令用于设置断点，LLDB提供了很多种设置断点的方式：</p>
+
+<p>使用-n根据方法名设置断点：</p>
+
+<p>e.g: 我们想给所有类中的viewWillAppear:设置一个断点: <br>
+<img src="http://img.blog.csdn.net/20160504180054217" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="使用-f指定文件">使用-f指定文件</h1>
+
+<p>e.g: 我们只需要给ViewController.m文件中的viewDidLoad设置断点：</p>
+
+<p><img src="http://img.blog.csdn.net/20160504180325970" alt="这里写图片描述" title=""></p>
+
+<p>这里需要注意，如果方法未写在文件中（比如写在category文件中，或者父类文件中），指定文件之后，将无法给这个方法设置断点。</p>
+
+
+
+<h1 id="使用-l指定文件某一行设置断点">使用-l指定文件某一行设置断点</h1>
+
+<p>e.g: 我们想给ViewController.m第38行设置断点 <br>
+<img src="http://img.blog.csdn.net/20160504180419847" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="使用-c设置条件断点">使用-c设置条件断点</h1>
+
+<p>e.g: text:方法接受一个ret的参数，我们想让ret == YES的时候程序中断： <br>
+<img src="http://img.blog.csdn.net/20160504180524238" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="使用-o设置单次断点">使用-o设置单次断点</h1>
+
+<p>e.g: 如果刚刚那个断点我们只想让他中断一次： <br>
+<img src="http://img.blog.csdn.net/20160504180611910" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="breakpoint-command">breakpoint command</h1>
+
+<p>有的时候我们可能需要给断点添加一些命令，比如每次走到这个断点的时候，我们都需要打印self对象。我们只需要给断点添加一个po self命令，就不用每次执行断点再自己输入po self了</p>
+
+
+
+<h1 id="breakpoint-command-add">breakpoint command add</h1>
+
+<p>breakpoint command add命令就是给断点添加命令的命令。</p>
+
+<p>e.g: 假设我们需要在ViewController的viewDidLoad中查看self.view的值 我们首先给-[ViewController viewDidLoad]添加一个断点 <br>
+<img src="http://img.blog.csdn.net/20160504180710645" alt="这里写图片描述" title=""></p>
+
+<p>可以看到添加成功之后，这个breakpoint的id为3，然后我们给他增加一个命令：po self.view <br>
+<img src="http://img.blog.csdn.net/20160504180810754" alt="这里写图片描述" title=""></p>
+
+<p>-o完整写法是–one-liner，表示增加一条命令。3表示对id为3的breakpoint增加命令。 添加完命令之后，每次程序执行到这个断点就可以自动打印出self.view的值了</p>
+
+<p>如果我们一下子想增加多条命令，比如我想在viewDidLoad中打印当前frame的所有变量，但是我们不想让他中断，也就是在打印完成之后，需要继续执行。我们可以这样玩： <br>
+<img src="http://img.blog.csdn.net/20160504180913540" alt="这里写图片描述" title=""></p>
+
+<p>输入breakpoint command add 3对断点3增加命令。他会让你输入增加哪些命令，输入’DONE’表示结束。这时候你就可以输入多条命令了</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs ">注意:多次对同一个断点添加命令，后面命令会将前面命令覆盖</code></pre>
+
+
+
+<h1 id="breakpoint-command-list">breakpoint command list</h1>
+
+<p>如果想查看某个断点已有的命令，可以使用breakpoint command list。 e.g: 我们查看一下刚刚的断点3已有的命令 <br>
+<img src="http://img.blog.csdn.net/20160504185303801" alt="这里写图片描述" title=""> <br>
+可以看到一共有2条命令，分别为frame variable和continue</p>
+
+
+
+<h1 id="breakpoint-command-delete">breakpoint command delete</h1>
+
+<p>有增加就有删除，breakpoint command delete可以让我们删除某个断点的命令 e.g: 我们将断点3中的命令删除:</p>
+
+<p><img src="http://img.blog.csdn.net/20160504185543288" alt="这里写图片描述" title=""></p>
+
+<p>可以看到删除之后，断点3就没有命令了</p>
+
+
+
+<h1 id="breakpoint-list">breakpoint list</h1>
+
+<p>如果我们想查看已经设置了哪些断点，可以使用breakpoint list e.g:</p>
+
+<p><img src="http://img.blog.csdn.net/20160504185641304" alt="这里写图片描述" title=""></p>
+
+<p>我们可以看到当前只有一个断点，打在-[ViewController viewDidLoad]上，id是4</p>
+
+
+
+<h1 id="breakpoint-disableenable">breakpoint disable/enable</h1>
+
+<p>有的时候我们可能暂时不想要某个断点，可以使用breakpoint disable让某个断点暂时失效 e.g: 我们来让刚刚的断点4失效 <br>
+<img src="http://img.blog.csdn.net/20160504185736617" alt="这里写图片描述" title=""> <br>
+输入完命令之后，显示断点已经失效</p>
+
+<p>当我们又需要这个断点的时候，可以使用breakpoint enable再次让他生效 e.g: 重新启用断点4 <br>
+<img src="http://img.blog.csdn.net/20160504185839508" alt="这里写图片描述" title=""></p>
+
+
+
+<h1 id="breakpoint-delete">breakpoint delete</h1>
+
+<p>如果我们觉得这个断点以后再也用不上了，可以用breakpoint delete直接删除断点. e.g: 删除断点4 <br>
+<img src="http://img.blog.csdn.net/20160504191936314" alt="这里写图片描述" title=""></p>
+
+<p>如果我们想删除所有断点，只需要不指定breakpoint delete参数即可</p>
+
+<p><img src="http://img.blog.csdn.net/20160504192010869" alt="这里写图片描述" title=""></p>
+
+<p>删除的时候他会提示你，是不是真的想删除所有断点，需要你再次输入Y确认。如果想直接删除，不需要他的提示，使用-f命令选项即可 <br>
+<img src="http://img.blog.csdn.net/20160504192205496" alt="这里写图片描述" title=""></p>
+
+<p>实际平时我们真正使用breakpoint命令反而比较少，因为Xcode已经内置了断点工具。我们可以直接在代码上打断点，可以在断点工具栏里面查看编辑断点，这比使用LLDB命令方便很多。不过了解LLDB相关命令可以让我们对断点理解更深刻。</p>
+
+
+
+<h1 id="watchpoint">watchpoint</h1>
+
+<p>breakpoint有一个孪生兄弟watchpoint。如果说breakpoint是对方法生效的断点，watchpoint就是对地址生效的断点</p>
+
+<p>如果我们想要知道某个属性什么时候被篡改了，我们该怎么办呢？有人可能会说对setter方法打个断点不就行了么？但是如果更改的时候没调用setter方法呢？ 这时候最好的办法就是用watchpoint。我们可以用他观察这个属性的地址。如果地址里面的东西改变了，就让程序中断</p>
+
+
+
+<h1 id="watchpoint-set">watchpoint set</h1>
+
+<p>watchpoint set命令用于添加一个watchpoint。只要这个地址中的内容变化了，程序就会中断。</p>
+
+
+
+<h1 id="watchpoint-set-variable">watchpoint set variable</h1>
+
+<p>一般情况下，要观察变量或者属性，使用watchpoint set variable命令即可 e.g: 观察self-&gt;_string <br>
+<img src="http://img.blog.csdn.net/20160504201810757" alt="这里写图片描述" title=""></p>
+
+<p>watchpoint set variable传入的是变量名。需要注意的是，这里不接受方法，所以不能使用watchpoint set variable self.string，因为self.string调用的是string的getter方法</p>
+
+<h1 id="watchpoint-set-expression">watchpoint set expression</h1>
+
+<p>如果我们想直接观察某个地址，可以使用watchpoint set expression e.g: 我们先拿到_model的地址，然后对地址设置一个watchpoint <br>
+<img src="http://img.blog.csdn.net/20160504202401546" alt="这里写图片描述" title=""></p>
+
+<h1 id="watchpoint-command">watchpoint command</h1>
+
+<p>跟breakpoint类似，在watchpoint中也可以添加命令</p>
+
+<h1 id="watchpoint-command-add">watchpoint command add</h1>
+
+<p>我们来看看怎么给watchpoint添加命令： <br>
+首先，我们设置一个watchpoint： <br>
+<img src="http://img.blog.csdn.net/20160504202712050" alt="这里写图片描述" title=""></p>
+
+<p>可以看到这个watchpoint的id是1。我们可以用watchpoint command add -o添加单条命令 <br>
+<img src="http://img.blog.csdn.net/20160504202806248" alt="这里写图片描述" title=""> <br>
+我们在watchpoint停下来的时候，打印了他的线程信息。</p>
+
+<p>我们也可以一次添加多条命令：</p>
+
+<pre class="prettyprint"><code class=" hljs oxygene">(lldb) watchpoint command <span class="hljs-keyword">add</span> <span class="hljs-number">1</span>
+Enter your debugger command(s).  <span class="hljs-keyword">Type</span> <span class="hljs-string">'DONE'</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">end</span>.
+&gt; bt
+&gt; <span class="hljs-keyword">continue</span>
+&gt; DONE</code></pre>
+
+<p>可以看到watchpoint的使用方法跟breakpoint几乎一模一样。</p>
+
+<h1 id="watchpoint-command-list">watchpoint command list</h1>
+
+<p>我们可以用watchpoint command list列出某个watchpoint所有的command</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs php">(lldb) watchpoint command <span class="hljs-keyword">list</span> <span class="hljs-number">1</span>
+Watchpoint <span class="hljs-number">1</span>:
+    watchpoint commands:
+      bt
+      <span class="hljs-keyword">continue</span></code></pre>
+
+
+
+<h1 id="watchpoint-command-delete">watchpoint command delete</h1>
+
+<p>我们也可以用watchpoint command delete删除某个watchpoint所有的command</p>
+
+<pre class="prettyprint"><code class=" hljs livecodeserver">(lldb) watchpoint <span class="hljs-command"><span class="hljs-keyword">command</span> <span class="hljs-title">delete</span> <span class="hljs-title">1</span></span>
+(lldb) watchpoint <span class="hljs-command"><span class="hljs-keyword">command</span> <span class="hljs-title">list</span> <span class="hljs-title">1</span></span>
+Watchpoint <span class="hljs-number">1</span> does <span class="hljs-operator">not</span> have <span class="hljs-operator">an</span> associated <span class="hljs-command"><span class="hljs-keyword">command</span>.</span></code></pre>
+
+
+
+<h1 id="watchpoint-list">watchpoint list</h1>
+
+<p>如果我们想看当前所有watchpoint，可以使用watchpoint list:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs ocaml">(lldb) watchpoint <span class="hljs-built_in">list</span>
+Number <span class="hljs-keyword">of</span> supported hardware watchpoints: <span class="hljs-number">4</span>
+Current watchpoints:
+Watchpoint <span class="hljs-number">1</span>: addr = <span class="hljs-number">0x7fe9f9f28e30</span> size = <span class="hljs-number">8</span> state = enabled <span class="hljs-class"><span class="hljs-keyword">type</span> =</span> w
+    watchpoint spec = <span class="hljs-string">'_string'</span>
+    old <span class="hljs-keyword">value</span>: <span class="hljs-number">0x0000000000000000</span>
+    <span class="hljs-keyword">new</span> <span class="hljs-keyword">value</span>: <span class="hljs-number">0x000000010128e0d0</span></code></pre>
+
+<p>可以看到，只有一个watchpoint。</p>
+
+
+
+<h1 id="watchpoint-disable">watchpoint disable</h1>
+
+<p>当我们不想让某个watchpoint生效的时候，可以用watchpoint disable:</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs mel">(lldb) watchpoint <span class="hljs-keyword">disable</span> <span class="hljs-number">1</span>
+<span class="hljs-number">1</span> watchpoints disabled.</code></pre>
+
+<p>再次查看这个watchpoint，可以看到他的state已经变为了disabled <br>
+<img src="http://img.blog.csdn.net/20160504203024156" alt="这里写图片描述" title=""></p>
+
+<h1 id="watchpoint-enable">watchpoint enable</h1>
+
+<p>过了一会，我们又要用这个watchpoint了，这时候可以使用watchpoint enable:</p>
+
+<pre class="prettyprint"><code class=" hljs ">(lldb) watchpoint enable 1
+1 watchpoints enabled.</code></pre>
+
+
+
+<h1 id="watchpoint-delete">watchpoint delete</h1>
+
+<p>如果我们觉得再也用不着这个watchpoint了，可以用watchpoint delete将他删除:</p>
+
+<pre class="prettyprint"><code class=" hljs sql">(lldb) watchpoint <span class="hljs-operator"><span class="hljs-keyword">delete</span> <span class="hljs-number">1</span>
+<span class="hljs-number">1</span> watchpoints deleted.
+(lldb) watchpoint list
+<span class="hljs-keyword">Number</span> <span class="hljs-keyword">of</span> supported hardware watchpoints: <span class="hljs-number">4</span>
+<span class="hljs-keyword">No</span> watchpoints currently <span class="hljs-keyword">set</span>.</span></code></pre>
+
+<p>删除之后，我们可以看到watchpoint list里面已经没有watchpoint1了</p>
+
+<p>如果有很多个watchpoint，我们想全都干掉，只需要不指定具体哪个watchpoint即可：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs sql">(lldb) watchpoint <span class="hljs-operator"><span class="hljs-keyword">delete</span> 
+About <span class="hljs-keyword">to</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">all</span> watchpoints, <span class="hljs-keyword">do</span> you want <span class="hljs-keyword">to</span> <span class="hljs-keyword">do</span> that?: [Y/n] y
+<span class="hljs-keyword">All</span> watchpoints removed. (<span class="hljs-number">2</span> watchpoints)</span></code></pre>
+
+
+
+<h1 id="target">target</h1>
+
+
+
+<pre class="prettyprint"><code class=" hljs mel">target modules lookup(<span class="hljs-keyword">image</span> lookup)</code></pre>
+
+<p>对于target这个命令，我们用得最多的可能就是target modules lookup。由于LLDB给target modules取了个别名image，所以这个命令我们又可以写成image lookup。</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs mel"><span class="hljs-keyword">image</span> lookup –address</code></pre>
+
+<p>当我们有一个地址，想查找这个地址具体对应的文件位置，可以使用image lookup –address，简写为image lookup -a e.g: 当我们发生一个crash</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs php"><span class="hljs-number">2015</span>-<span class="hljs-number">12</span>-<span class="hljs-number">17</span> <span class="hljs-number">14</span>:<span class="hljs-number">51</span>:<span class="hljs-number">06.301</span> TLLDB[<span class="hljs-number">25086</span>:<span class="hljs-number">246169</span>] *** Terminating app due to uncaught <span class="hljs-keyword">exception</span> <span class="hljs-string">'NSRangeException'</span>, reason: <span class="hljs-string">'*** -[__NSArray0 objectAtIndex:]: index 1 beyond bounds for empty NSArray'</span>
+*** First <span class="hljs-keyword">throw</span> call stack:
+(
+    <span class="hljs-number">0</span>   CoreFoundation                      <span class="hljs-number">0x000000010accde65</span> __exceptionPreprocess + <span class="hljs-number">165</span>
+    <span class="hljs-number">1</span>   libobjc.A.dylib                     <span class="hljs-number">0x000000010a746deb</span> objc_exception_throw + <span class="hljs-number">48</span>
+    <span class="hljs-number">2</span>   CoreFoundation                      <span class="hljs-number">0x000000010ac7c395</span> -[__NSArray0 objectAtIndex:] + <span class="hljs-number">101</span>
+    <span class="hljs-number">3</span>   TLLDB                               <span class="hljs-number">0x000000010a1c3e36</span> -[ViewController viewDidLoad] + <span class="hljs-number">86</span>
+    <span class="hljs-number">4</span>   UIKit                               <span class="hljs-number">0x000000010b210f98</span> -[UIViewController loadViewIfRequired] + <span class="hljs-number">1198</span>
+    <span class="hljs-number">5</span>   UIKit                               <span class="hljs-number">0x000000010b2112e7</span> -[UIViewController view] + <span class="hljs-number">27</span></code></pre>
+
+<p>我们可以看到是由于-[__NSArray0 objectAtIndex:]:超出边界而导致的crash，但是objectAtIndex:的代码到底在哪儿呢？</p>
+
+<pre class="prettyprint"><code class=" hljs css">(<span class="hljs-tag">lldb</span>) <span class="hljs-tag">image</span> <span class="hljs-tag">lookup</span> <span class="hljs-tag">-a</span> 0<span class="hljs-tag">x000000010a1c3e36</span>
+      <span class="hljs-tag">Address</span>: <span class="hljs-tag">TLLDB</span><span class="hljs-attr_selector">[0x0000000100000e36]</span> (<span class="hljs-tag">TLLDB</span><span class="hljs-class">.__TEXT</span><span class="hljs-class">.__text</span> + 246)
+      <span class="hljs-tag">Summary</span>: <span class="hljs-tag">TLLDB</span>`<span class="hljs-tag">-</span><span class="hljs-attr_selector">[ViewController viewDidLoad]</span> + 86 <span class="hljs-tag">at</span> <span class="hljs-tag">ViewController</span><span class="hljs-class">.m</span><span class="hljs-pseudo">:32</span></code></pre>
+
+<p>根据0x000000010a1c3e36 -[ViewController viewDidLoad]里面的地址，使用image lookup –address查找，我们可以看到代码位置在ViewController.m里面的32行</p>
+
+<pre class="prettyprint"><code class=" hljs mel"><span class="hljs-keyword">image</span> lookup –name</code></pre>
+
+<p>当我们想查找一个方法或者符号的信息，比如所在文件位置等。我们可以使用image lookup –name，简写为image lookup -n。</p>
+
+<p>e.g: 刚刚遇到的真问题，某个第三方SDK用了一个我们项目里原有的第三方库，库里面对NSDictionary添加了category。也就是有2个class对NSDictionary添加了名字相同的category，项目中调用自己的category的地方实际走到了第三方SDK里面去了。最大的问题是，这2个同名category方法行为并不一致，导致出现bug</p>
+
+<p>现在问题来了，怎么寻找到底是哪个第三方SDK？方法完全包在.a里面。 <br>
+其实只需使用image lookup -n即可：</p>
+
+<pre class="prettyprint"><code class=" hljs applescript">(lldb) image lookup -n dictionaryWithXMLString:
+<span class="hljs-number">2</span> matches found <span class="hljs-keyword">in</span> /Users/jiangliancheng/Library/Developer/Xcode/DerivedData/VideoIphone-aivsnqmlwjhxapdlvmdmrubbdxpq/Build/Products/Debug-iphoneos/BaiduIphoneVideo.app/BaiduIphoneVideo:
+        Address: BaiduIphoneVideo[<span class="hljs-number">0x00533a7c</span>] (BaiduIphoneVideo.__TEXT.__text + <span class="hljs-number">5414908</span>)
+        Summary: BaiduIphoneVideo`+[NSDictionary(SAPIXmlDictionary) dictionaryWithXMLString:] <span class="hljs-keyword">at</span> XmlDictionary.m
+         Module: <span class="hljs-type">file</span> = <span class="hljs-string">"/Users/jiangliancheng/Library/Developer/Xcode/DerivedData/VideoIphone-aivsnqmlwjhxapdlvmdmrubbdxpq/Build/Products/Debug-iphoneos/BaiduIphoneVideo.app/BaiduIphoneVideo"</span>, arch = <span class="hljs-string">"armv7"</span>
+    CompileUnit: <span class="hljs-property">id</span> = {<span class="hljs-number">0x00000000</span>}, <span class="hljs-type">file</span> = <span class="hljs-string">"/Users/jiangliancheng/Development/Work/iOS_ShareLib/SharedLib/Srvcs/BDPassport4iOS/BDPassport4iOS/SAPI/Extensive/ThirdParty/XMLDictionary/XmlDictionary.m"</span>, language = <span class="hljs-string">"Objective-C"</span>
+       Function: <span class="hljs-property">id</span> = {<span class="hljs-number">0x23500000756</span>}, <span class="hljs-property">name</span> = <span class="hljs-string">"+[NSDictionary(SAPIXmlDictionary) dictionaryWithXMLString:]"</span>, range = [<span class="hljs-number">0x005a6a7c</span>-<span class="hljs-number">0x005a6b02</span>)
+       FuncType: <span class="hljs-property">id</span> = {<span class="hljs-number">0x23500000756</span>}, decl = XmlDictionary.m:<span class="hljs-number">189</span>, clang_type = <span class="hljs-string">"NSDictionary *(NSString *)"</span> </code></pre>
+
+<p>东西有点多，我们只需关注里面的file这一行：</p>
+
+<pre class="prettyprint"><code class=" hljs applescript">CompileUnit: <span class="hljs-property">id</span> = {<span class="hljs-number">0x00000000</span>}, <span class="hljs-type">file</span> = <span class="hljs-string">"/Users/jiangliancheng/Development/Work/iOS_ShareLib/SharedLib/Srvcs/BDPassport4iOS/BDPassport4iOS/SAPI/Extensive/ThirdParty/XMLDictionary/XmlDictionary.m"</span>, language = <span class="hljs-string">"Objective-C"</span>
+CompileUnit: <span class="hljs-property">id</span> = {<span class="hljs-number">0x00000000</span>}, <span class="hljs-type">file</span> = <span class="hljs-string">"/Users/wingle/Workspace/qqlive4iphone/iphone_4.0_fabu_20150601/Common_Proj/mobileTAD/VIDEO/Library/Third Party/XMLDictionary/XMLDictionary.m"</span>, language = <span class="hljs-string">"Objective-C"</span>
+</code></pre>
+
+<p>可以清晰的看到，LLDB给我们找出来了这个方法的位置。 当然这个命令也可以找到方法的其他相关信息，比如参数等.</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs fsharp">image lookup –<span class="hljs-class"><span class="hljs-keyword">type</span></span></code></pre>
+
+<p>当我们想查看一个类型的时候，可以使用image lookup –type，简写为image lookup -t:</p>
+
+<p>e.g: 我们来看看Model的类型：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs mel">(lldb) <span class="hljs-keyword">image</span> lookup -t Model</code></pre>
+
+<p>可以看到，LLDB把Model这个class的所有属性和成员变量都打印了出来，当我们想了解某个类的时候，直接使用image lookup -t即可</p>
+
+<pre class="prettyprint"><code class=" hljs vbnet">target <span class="hljs-keyword">stop</span>-hook</code></pre>
+
+<p>我们知道，用LLDB debug，大多数时候需要让程序stop，不管用breakpoint还是用watchpoint。 <br>
+target stop-hook命令就是让你可以在每次stop的时候去执行一些命令</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">target <span class="hljs-keyword">stop</span>-hook只对breakpoint和watchpoint的程序<span class="hljs-keyword">stop</span>生效，直接点击Xcode上的pause或者debug view hierarchy不会生效</code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs livecodeserver">target stop-hook <span class="hljs-built_in">add</span> &amp; display</code></pre>
+
+<p>假如我们想在每次程序stop的时候，都用命令打印当前frame的所有变量。我们可以添加一个stop-hook</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) target <span class="hljs-keyword">stop</span>-hook add -o <span class="hljs-string">"frame variable"</span>
+<span class="hljs-keyword">Stop</span> hook <span class="hljs-preprocessor">#4 added.</span></code></pre>
+
+<p>target stop-hook add表示添加stop-hook，-o的全称是–one-liner，表示添加一条命令。</p>
+
+<p>我们看一下，当执行到一个断点的时候会发生什么？</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs erlang"><span class="hljs-pp">- Hook 1 <span class="hljs-params">(frame variable)</span>
+<span class="hljs-params">(<span class="hljs-variable">ViewController</span> *)</span> self = 0x00007fd55b12e380
+<span class="hljs-params">(<span class="hljs-variable">SEL</span>)</span> _cmd = "viewDidLoad"
+<span class="hljs-params">(<span class="hljs-variable">NSMutableURLRequest</span> *)</span> request = 0x00007fd55b1010c0</span></code></pre>
+
+<p>在程序stop的时候，他会自动执行frame variable，打印出了所有的变量。</p>
+
+<p>大多情况下，我们在stop的时候可能想要做的是打印一个东西。正常情况我们需要用target stop-hook add -o “p xxx”，LLDB提供了一个更简便的命令display。</p>
+
+<p>e.g: 下面2行代码效果相同</p>
+
+<pre class="prettyprint"><code class=" hljs lasso">(lldb) target stop<span class="hljs-attribute">-hook</span> add <span class="hljs-attribute">-o</span> <span class="hljs-string">"p self.view"</span>
+(lldb) display <span class="hljs-built_in">self</span><span class="hljs-built_in">.</span>view</code></pre>
+
+<p>也可以用display来执行某一个命令。p,e,expression是等效的。</p>
+
+<pre class="prettyprint"><code class=" hljs lasso">target stop<span class="hljs-attribute">-hook</span> <span class="hljs-built_in">list</span></code></pre>
+
+<p>当添加完stop-hook之后，我们想看当前所有的stop-hook怎么办呢？使用stop-hook list</p>
+
+<pre class="prettyprint"><code class=" hljs avrasm">(lldb) target stop-hook list
+<span class="hljs-label">Hook:</span> <span class="hljs-number">4</span>
+  State: enabled
+  Commands: 
+    frame variable
+
+<span class="hljs-label">Hook:</span> <span class="hljs-number">5</span>
+  State: enabled
+  Commands: 
+    expression self<span class="hljs-preprocessor">.view</span>
+
+<span class="hljs-label">Hook:</span> <span class="hljs-number">6</span>
+  State: enabled
+  Commands: 
+    expr -- self<span class="hljs-preprocessor">.view</span></code></pre>
+
+<p>我们可以看到，我们添加了4个stop-hook，每个stop-hook都有一个id，他们分别是4，5，6</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs javascript">target stop-hook <span class="hljs-keyword">delete</span> &amp; undisplay</code></pre>
+
+<p>有添加的命令，当然也就有删除的命令。使用target stop-hook delete可以删除stop-hook，如果你觉得这个命令有点长，懒得敲。你也可以用undisplay</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs javascript">(lldb) target stop-hook <span class="hljs-keyword">delete</span> <span class="hljs-number">4</span>
+(lldb) undisplay <span class="hljs-number">5</span></code></pre>
+
+<p>我们用target stop-hook delete和undisplay分别删除了id为4和5的stop-hook</p>
+
+
+
+<h1 id="target-stop-hook-disableenable">target stop-hook disable/enable</h1>
+
+<p>当我们暂时想让某个stop-hook失效的时候，可以使用target stop-hook disable</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) target <span class="hljs-keyword">stop</span>-hook disable <span class="hljs-number">8</span></code></pre>
+
+<p>如果我们想让所有的stop-hook失效，只需不传入stop-hookid即可：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) target <span class="hljs-keyword">stop</span>-hook disable</code></pre>
+
+<p>有disable就有enable，我们又想让stop-hook生效了。可以使用target stop-hook enable</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) target <span class="hljs-keyword">stop</span>-hook enable <span class="hljs-number">8</span></code></pre>
+
+<p>同理，不传入参数表示让所有stop-hook生效</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) target <span class="hljs-keyword">stop</span>-hook enable</code></pre>
+
+
+
+<h1 id="extension">Extension</h1>
+
+
+
+<pre class="prettyprint"><code class=" hljs oxygene">(lldb) p <span class="hljs-keyword">self</span>.view.frame
+error: <span class="hljs-keyword">property</span> <span class="hljs-string">'frame'</span> <span class="hljs-keyword">not</span> found <span class="hljs-keyword">on</span> object <span class="hljs-keyword">of</span> <span class="hljs-keyword">type</span> <span class="hljs-string">'UIView *'</span>
+error: <span class="hljs-number">1</span> errors parsing expression
+(lldb) e @import UIKit
+(lldb) p <span class="hljs-keyword">self</span>.view.frame
+(CGRect) $<span class="hljs-number">0</span> = (origin = (x = <span class="hljs-number">0</span>, y = <span class="hljs-number">0</span>), size = (width = <span class="hljs-number">375</span>, height = <span class="hljs-number">667</span>))</code></pre>
+
+<p>由于每次run Xcode，LLDB的东西都会被清空。所以每次run你都需要在LLDB中输入e @import UIKit才能使用这个方便的功能，有点麻烦呀！</p>
+
+<p>之后有人提出了比较方便的一个办法。给UIApplicationMain设置一个断点，在断点中添加执行e @import UIKit。 <br>
+<img src="http://img.blog.csdn.net/20160504170630926" alt="这里写图片描述" title=""></p>
+
+<p>这种方法非常方便，不用自己输入了，但是断点我们可能会误删，而且断点是对应工程的。换一个工程又得重新打一个这样的断点。还是有点麻烦。有没有更简便的方法呢？</p>
+
+<p>我们首先想到的是LLDB在每次启动的时候都会load ‘~/.lldbinit’文件。在这里面执行e @import UIKit不就行了么？不会被误删，对每个工程都有效！</p>
+
+<p>然而想法是美好的，现实却是残酷的！因为UIKit这个库是在target中。而load ‘~/.lldbinit’的时候target还没创建。所以无法import UIKit。stackoverflow详细解释</p>
+
+<p>这时候我们又想到，可不可以在’~/.lldbinit’中给UIApplicationMain设置一个断点，在断点中添加执行e @import UIKit呢？</p>
+
+<p>答案是不行。原因跟前面一样，load ‘~/.lldbinit’执行时间太早。断点是依赖target的，target还未创建，断点加不上去。好事多磨，道路坎坷呀~~~</p>
+
+<p>后来我们又想到用stop-hook行不行呢？stop-hook不依赖target。一般我们p frame的时候，都需要先stop，理论上是可行的</p>
+
+<p>事实证明stop-hook的方法完全ok。只需要在’~/.lldbinit’中添加这2条命令即可：</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">display @<span class="hljs-keyword">import</span> UIKit
+target stop<span class="hljs-attribute">-hook</span> add <span class="hljs-attribute">-o</span> <span class="hljs-string">"target stop-hook disable"</span></code></pre>
+
+
+
+<pre class="prettyprint"><code class=" hljs lasso">命令<span class="hljs-number">1</span>：使用display表示在stop的时候执行@<span class="hljs-keyword">import</span> UIKit
+命令<span class="hljs-number">2</span>：由于我们只需要执行一次@<span class="hljs-keyword">import</span> UIKit，所以执行完成之后，执行target stop<span class="hljs-attribute">-hook</span> disable，使原有的所有stop<span class="hljs-attribute">-hook</span>失效</code></pre>
+
+<p>这个命令有个缺陷，直接点击Xcode上的pause和debug view hierarchy，stop-hook不会生效。正在探索有没有更好的办法完成@import UIKit，如果你想到了，可以联系我~</p>
+
+
+
+<h1 id="target-symbols-addadd-dsym">target symbols add(add-dsym)</h1>
+
+<p>说这个命令之前，先简单解释一下dSYM文件。程序运行的时候，都会编译成二进制文件。因为计算机只识别二进制文件，那为什么我们还能在代码上打断点？</p>
+
+<p>这主要是因为在编译的时候Xcode会生成dSYM文件，dSYM文件记录了哪行代码对应着哪些二进制，这样我们对代码打断点就会对应到二进制上。dSYM详细资料</p>
+
+<p>当Xcode找不着dSYM文件的时候，我们就无法对代码打断点，进行调试。target symbols add命令的作用就是让我们可以手动的将dSYM文件添加上去。LLBD对这个命令起了一个别名: add-dsym</p>
+
+<p>e.g: 当我们对接framework的时候，如果只有framework代码，没有工程代码，能不能debug呢？其实我们只需要拿到工程的ipa和dSYM文件，就可以debug了，通过Attach to Process，使用命令add-dsym将dSYM文件加入target，即可只debug framework，不需要工程的代码</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs r">add-dsym ~/<span class="hljs-keyword">...</span>/XXX.dSYM</code></pre>
+
+<p>详细请参考: <br>
+<a href="http://jiangliancheng.gitcafe.io/2015/07/25/iOS%E4%B8%ADframework%E7%9A%84%E8%81%94%E8%B0%83/">http://jiangliancheng.gitcafe.io/2015/07/25/iOS%E4%B8%ADframework%E7%9A%84%E8%81%94%E8%B0%83/</a></p>
+
+
+
+<h1 id="help-apropos">help &amp; apropos</h1>
+
+<p>LLDB的命令其实还有很多，很多命令我也没玩过。就算玩过的命令，我们也非常容易忘记，下次可能就不记得是怎么用的了。还好LLDB给我们提供了2个查找命令的命令:help &amp; apropos</p>
+
+
+
+<h1 id="help">help</h1>
+
+<p>直接在LLDB中输入help。可以查看所有的LLDB命令</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) help
+Debugger commands:
+
+  apropos           -- Find a list <span class="hljs-keyword">of</span> debugger commands related <span class="hljs-keyword">to</span> a particular
+                       word/subject.
+  breakpoint        -- A <span class="hljs-keyword">set</span> <span class="hljs-keyword">of</span> commands <span class="hljs-keyword">for</span> operating <span class="hljs-keyword">on</span> breakpoints. Also see
+                       _regexp-break.
+  help              -- Show a list <span class="hljs-keyword">of</span> all debugger commands, <span class="hljs-keyword">or</span> give details
+                       about specific commands.
+  script            -- Pass an expression <span class="hljs-keyword">to</span> the script interpreter <span class="hljs-keyword">for</span>
+                       evaluation <span class="hljs-keyword">and</span> <span class="hljs-keyword">return</span> the results. </code></pre>
+
+<p>如果我们想看具体某一个命令的详细用法，可以使用help  e.g: 我们查看watchpoint命令</p>
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) help watchpoint
+The following subcommands are supported:
+
+      command -- A <span class="hljs-keyword">set</span> <span class="hljs-keyword">of</span> commands <span class="hljs-keyword">for</span> adding, removing <span class="hljs-keyword">and</span> examining bits <span class="hljs-keyword">of</span>
+                 code <span class="hljs-keyword">to</span> be executed <span class="hljs-keyword">when</span> the watchpoint <span class="hljs-keyword">is</span> hit (watchpoint
+                 <span class="hljs-comment">'commmands').</span>
+      delete  -- Delete the specified watchpoint(s).  <span class="hljs-keyword">If</span> no watchpoints are
+                 specified, delete them all.</code></pre>
+
+
+
+<h1 id="apropos">apropos</h1>
+
+<p>有的时候，我们可能并不能完全记得某个命令，如果只记得命令中的某个关键字。这时候我们可以使用apropos搜索相关命令信息。</p>
+
+<p>e.g: 我们想使用stop-hook的命令，但是已经不记得stop-hook命令是啥样了</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs vbnet">(lldb) apropos <span class="hljs-keyword">stop</span>-hook
+The following built-<span class="hljs-keyword">in</span> commands may relate <span class="hljs-keyword">to</span> <span class="hljs-comment">'stop-hook':</span>
+  _regexp-display          -- Add an expression evaluation <span class="hljs-keyword">stop</span>-hook.
+  _regexp-undisplay        -- Remove an expression evaluation <span class="hljs-keyword">stop</span>-hook.
+  target <span class="hljs-keyword">stop</span>-hook         -- A <span class="hljs-keyword">set</span> <span class="hljs-keyword">of</span> commands <span class="hljs-keyword">for</span> operating <span class="hljs-keyword">on</span> debugger
+                              target <span class="hljs-keyword">stop</span>-hooks.</code></pre>
+
+<p>可以看到使用apropos stop-hook搜索一下，即可将所有stop-hook相关命令搜索出来</p>
+
+
+
+<h1 id="常用的debug快捷键">常用的Debug快捷键</h1>
+
+<p>debug的时候，使用快捷键是一个很好的习惯，我简单列举了几个debug的快捷键</p>
+
+
+
+<pre class="prettyprint"><code class=" hljs oxygene">功能  命令
+暂停/继续   cmd + ctrl + Y
+断点失效/生效 cmd + Y
+控制台显示/隐藏    cmd + shift + Y
+光标切换到控制台    cmd + shift + C
+清空控制台   cmd + K
+<span class="hljs-keyword">step</span> over   F6
+<span class="hljs-keyword">step</span> <span class="hljs-keyword">into</span>   F7
+<span class="hljs-keyword">step</span> <span class="hljs-keyword">out</span>    F8</code></pre></div>
+        <script  type="text/javascript">
+            $(function () {
+                $('pre.prettyprint code').each(function () {
+                    var lines = $(this).text().split('\n').length;
+                    var $numbering = $('<ul/>').addClass('pre-numbering').hide();
+                    $(this).addClass('has-numbering').parent().append($numbering);
+                    for (i = 1; i <= lines; i++) {
+                        $numbering.append($('<li/>').text(i));
+                    };
+                    $numbering.fadeIn(1700);
+                });
+            });
+        </script>
+ </div>
+
+          </div>
+
+              <div class="prev_next">
+                        <a href="/article/details?id=51314980" class="prev" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian']);">上一篇</a>                                                                       
+                        <a href="/article/details?id=51326373" class="next" onclick="_gaq.push(['_trackEvent','function', 'onclick', 'blog_articles_shangyipian'])">下一篇</a>
+              </div>         
+        </div>
+        
+       <!-- 广告位开始 -->
+        <ins data-revive-zoneid="174" data-revive-id="8c38e720de1c90a6f6ff52f3f89c4d57"></ins>
+        <!-- 广告位结束 -->   
+
+       
+<script  type="text/javascript"  src="/static/js/highcode.js"></script>
+<script type="text/javascript">
+    var fileName = '51316510';
+    var commentscount = 1;
+    var islock = false;
+    var currentUserName='';
+    var topSize=3;
+    var listId = ".blog_comment_list";
+</script>
+
+<div class="no_comment"  style="display:none"><i class="iconfont">&#xe60a;</i><span>暂无评论，</span><a href="/comment/post?id=51316510">我去发表</a><em>~</em></div>
+
+ <div class="blog_comment"  style="display:none">
+       <h3 class="isComment">评论<span>（1）</span></h3>
+       <dl class="blog_comment_list"></dl>
+       <div class="checkAll"></div>
+ </div>
+
+<script  type="text/javascript" src="/static/js/comment.js"></script>
+
+
+
+               <div style="display:none" id="tags">ios,xcode,调试,流程控制,控制台,编译器</div>
+
+       <div class="my_hot_article">
+          <h3 class="isArticle">我的热门文章</h3>
+          <ul class="hot_article">
+                <li><a href="/article/details?id=51475384">人工智能之机器学习常见算法</a></li>
+                <li><a href="/article/details?id=51392044">iOS前端与后台交互技术实现及技术细节</a></li>
+                <li><a href="/article/details?id=51286109">WKWebView与JS交互实战技巧之API介绍</a></li>
+                <li><a href="/article/details?id=51291753">iOS开发之蓝牙4.0技术完美实现</a></li>
+                <li><a href="/article/details?id=51415733">玩转苹果自带支付</a></li>
+          </ul>
+        </div>
+
+        <div class="my_hot_article">
+          <h3 class="isArticle">相关博文</h3>
+          <ul class="hot_article" id="res" data-mod="popu_36"  class="tracking-ad"></ul>
+        </div>
+
+<script type="text/javascript">
+    $(function () {
+        setTimeout(function () {
+            var searchtitletags = 'iOS中教你快速掌握LLDB调试技巧' + ',' + $("#tags").html();
+            searchService({
+                index: 'blog',
+                query: searchtitletags,
+                from: 0,
+                size: 5,
+                appendTo: '#res',
+                url: 'recommend',
+                his: 2,
+                client: "blog_cf_enhance",
+                tmpl: '<li><a href="#{ url }" title="#{ title }" strategy="#{ strategy }">#{ title }</a></li>'
+            });
+        }, 500);
+    });    
+
+ </script>  
+
+
+
+
+       
+      </div>
+
+           <div class="leftNav">
+      
+<div class="left_top">
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2farticle%2fdetails%3fid%3d51316510%26from%3dtimeline%26isappinstalled%3d0"><img src="http://avatar.csdn.net/1/B/B/1_csdn.jpg"></a>
+        <a href="https://passport.csdn.net/account/login?from=http%3a%2f%2fm.blog.csdn.net%2farticle%2fdetails%3fid%3d51316510%26from%3dtimeline%26isappinstalled%3d0" class="sign">未登录</a> 
+</div>
+        
+        <ul class="nav_list">
+            <li><a href="/home/index"><i>&bull;</i><span>首页</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=mobile&Type=New"><i>&bull;</i><span>移动开发</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=web&Type=New"><i>&bull;</i><span>Web前端</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=enterprise&Type=New"><i>&bull;</i><span>架构设计</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=code&Type=New"><i>&bull;</i><span>编程语言</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=www&Type=New"><i>&bull;</i><span>互联网</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=database&Type=New"><i>&bull;</i><span>数据库</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=system&Type=New"><i>&bull;</i><span>系统运维</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=cloud&Type=New"><i>&bull;</i><span>云计算</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=software&Type=New"><i>&bull;</i><span>研发管理</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+                <li><a href="/Column/Index?Channel=other&Type=New"><i>&bull;</i><span>综合</span><img src="/static/images/iconfont-youjiantou.png" alt="img" class="arrow_r"></a></li>
+        </ul>
+   </div>
+   
+
+      <div id="mask"></div>
+    </div>
+
+
+    <div class="blog_handle">
+        <span id="digg"  style="cursor:pointer"><i class="iconfont">&#xe60e;</i><em>2</em></span>
+        <span id="bury" style="cursor:pointer"><i class="iconfont">&#xe60d;</i><em>1</em></span>
+        <span style="cursor:pointer"><a href="/comment/alllist?id=51316510"><i class="iconfont">&#xe60a;</i></a><em>1</em></span>
+        <span id="share_btn" style="cursor:pointer"><a href="javascript:;"><i class="iconfont">&#xe608;</i></a><em>分享</em></span>
+    </div>
+
+    <div class="backToTop"><img src="/static/images/iconfont-fudongxiangshang.png" alt="img"></div>
+    <!--分享弹窗：-->
+    <div class="popup_cover"></div>
+    <div class="sharePopup_box">
+      <div class="sharePopup">
+        <!--JiaThis Button BEGIN-->
+        <div class="jiathis_style_32x32"><a class="jiathis_button_weixin"><b><i class="iconfont">&#xe605;</i></b><em>微信分享</em></a><a class="jiathis_button_tsina"><b><i class="iconfont">&#xe607;</i></b><em>新浪微博</em></a><a class="jiathis_button_cqq"><b><i class="iconfont">&#xe606;</i></b><em>QQ好友</em></a><a class="jiathis_button_qzone"><b><i class="iconfont">&#xe603;</i></b><em>QQ空间</em></a></div>
+        <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+        <!--JiaThis Button END-->
+      </div>
+      <div class="sharePopup_cancel">取 消</div>
+    </div>
+    <script>
+      $(function(){
+        $('#share_btn').click(function(){
+          $('.popup_cover').stop().show();
+          $('.sharePopup_box').stop().slideDown();
+        });
+        $('.sharePopup_cancel').click(function(){
+          $('.popup_cover').stop().hide();
+          $('.sharePopup_box').stop().slideUp();
+        });
+      })
+    </script>
+
+
+
+</body>
+ <div class="ad_box">
+      <div class="ad_l"><a href="http://ms.csdn.net/download.html"><img src="/static/images/index_AD.jpg" alt="img"></a><span>即使是一小步<br/>也想与你分享</span></div>
+      <div class="ad_r"><a href="http://ms.csdn.net/download.html" class="open_btn">打开</a><i class="ad_close iconfont">&#xe60c;</i></div>
+    </div>
+
+   <div class="backToTop"><img src="/static/images/iconfont-fudongxiangshang.png" alt="img"></div>
+    <div class="blog_footer">©1999-2012, csdn.net, All Rights Reserved</div>
+    <script type="text/javascript" src="/static/js/apps/fontSize.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://csdnimg.cn/pubfooter/js/tracking.js?fe68e58"></script>
+
+</html>

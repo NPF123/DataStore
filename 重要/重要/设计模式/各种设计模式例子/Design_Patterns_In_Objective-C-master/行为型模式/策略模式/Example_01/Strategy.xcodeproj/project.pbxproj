@@ -1,0 +1,329 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B97629B1AAD513600FD883C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B97629A1AAD513600FD883C /* main.m */; };
+		3B9762A31AAD6E4A00FD883C /* TakeOff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762A21AAD6E4A00FD883C /* TakeOff.m */; };
+		3B9762A61AAD6E9900FD883C /* Flight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762A51AAD6E9900FD883C /* Flight.m */; };
+		3B9762A91AAD6ECE00FD883C /* VerticalTakeOff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762A81AAD6ECE00FD883C /* VerticalTakeOff.m */; };
+		3B9762AF1AAD6F9B00FD883C /* LongDistanceTakeOff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762AE1AAD6F9B00FD883C /* LongDistanceTakeOff.m */; };
+		3B9762B21AAD6FEA00FD883C /* SubSonicFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762B11AAD6FEA00FD883C /* SubSonicFly.m */; };
+		3B9762B51AAD6FF800FD883C /* SuperSonicFly.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762B41AAD6FF800FD883C /* SuperSonicFly.m */; };
+		3B9762B81AAD707000FD883C /* Aircraft.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762B71AAD707000FD883C /* Aircraft.m */; };
+		3B9762BB1AAD709200FD883C /* Helicopter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762BA1AAD709200FD883C /* Helicopter.m */; };
+		3B9762C11AAD739B00FD883C /* AirPlane.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762C01AAD739B00FD883C /* AirPlane.m */; };
+		3B9762C41AAD73BE00FD883C /* Fighter.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762C31AAD73BE00FD883C /* Fighter.m */; };
+		3B9762C71AAD73DE00FD883C /* Harrier.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B9762C61AAD73DE00FD883C /* Harrier.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B9762951AAD513600FD883C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B9762971AAD513600FD883C /* Strategy */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Strategy; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B97629A1AAD513600FD883C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B9762A11AAD6E4A00FD883C /* TakeOff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakeOff.h; sourceTree = "<group>"; };
+		3B9762A21AAD6E4A00FD883C /* TakeOff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakeOff.m; sourceTree = "<group>"; };
+		3B9762A41AAD6E9900FD883C /* Flight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flight.h; sourceTree = "<group>"; };
+		3B9762A51AAD6E9900FD883C /* Flight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Flight.m; sourceTree = "<group>"; };
+		3B9762A71AAD6ECE00FD883C /* VerticalTakeOff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalTakeOff.h; sourceTree = "<group>"; };
+		3B9762A81AAD6ECE00FD883C /* VerticalTakeOff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalTakeOff.m; sourceTree = "<group>"; };
+		3B9762AD1AAD6F9B00FD883C /* LongDistanceTakeOff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LongDistanceTakeOff.h; sourceTree = "<group>"; };
+		3B9762AE1AAD6F9B00FD883C /* LongDistanceTakeOff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LongDistanceTakeOff.m; sourceTree = "<group>"; };
+		3B9762B01AAD6FEA00FD883C /* SubSonicFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubSonicFly.h; sourceTree = "<group>"; };
+		3B9762B11AAD6FEA00FD883C /* SubSonicFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubSonicFly.m; sourceTree = "<group>"; };
+		3B9762B31AAD6FF800FD883C /* SuperSonicFly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperSonicFly.h; sourceTree = "<group>"; };
+		3B9762B41AAD6FF800FD883C /* SuperSonicFly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperSonicFly.m; sourceTree = "<group>"; };
+		3B9762B61AAD707000FD883C /* Aircraft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aircraft.h; sourceTree = "<group>"; };
+		3B9762B71AAD707000FD883C /* Aircraft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aircraft.m; sourceTree = "<group>"; };
+		3B9762B91AAD709200FD883C /* Helicopter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helicopter.h; sourceTree = "<group>"; };
+		3B9762BA1AAD709200FD883C /* Helicopter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helicopter.m; sourceTree = "<group>"; };
+		3B9762BF1AAD739B00FD883C /* AirPlane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AirPlane.h; sourceTree = "<group>"; };
+		3B9762C01AAD739B00FD883C /* AirPlane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AirPlane.m; sourceTree = "<group>"; };
+		3B9762C21AAD73BE00FD883C /* Fighter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Fighter.h; sourceTree = "<group>"; };
+		3B9762C31AAD73BE00FD883C /* Fighter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Fighter.m; sourceTree = "<group>"; };
+		3B9762C51AAD73DE00FD883C /* Harrier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Harrier.h; sourceTree = "<group>"; };
+		3B9762C61AAD73DE00FD883C /* Harrier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Harrier.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B9762941AAD513600FD883C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B97628E1AAD513600FD883C = {
+			isa = PBXGroup;
+			children = (
+				3B9762991AAD513600FD883C /* Strategy */,
+				3B9762981AAD513600FD883C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B9762981AAD513600FD883C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B9762971AAD513600FD883C /* Strategy */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B9762991AAD513600FD883C /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				3B9762BE1AAD737D00FD883C /* Aircraft */,
+				3B9762BD1AAD737300FD883C /* Flight */,
+				3B9762BC1AAD736000FD883C /* TakeOff */,
+				3B97629A1AAD513600FD883C /* main.m */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
+		3B9762BC1AAD736000FD883C /* TakeOff */ = {
+			isa = PBXGroup;
+			children = (
+				3B9762A11AAD6E4A00FD883C /* TakeOff.h */,
+				3B9762A21AAD6E4A00FD883C /* TakeOff.m */,
+				3B9762A71AAD6ECE00FD883C /* VerticalTakeOff.h */,
+				3B9762A81AAD6ECE00FD883C /* VerticalTakeOff.m */,
+				3B9762AD1AAD6F9B00FD883C /* LongDistanceTakeOff.h */,
+				3B9762AE1AAD6F9B00FD883C /* LongDistanceTakeOff.m */,
+			);
+			name = TakeOff;
+			sourceTree = "<group>";
+		};
+		3B9762BD1AAD737300FD883C /* Flight */ = {
+			isa = PBXGroup;
+			children = (
+				3B9762A41AAD6E9900FD883C /* Flight.h */,
+				3B9762A51AAD6E9900FD883C /* Flight.m */,
+				3B9762B01AAD6FEA00FD883C /* SubSonicFly.h */,
+				3B9762B11AAD6FEA00FD883C /* SubSonicFly.m */,
+				3B9762B31AAD6FF800FD883C /* SuperSonicFly.h */,
+				3B9762B41AAD6FF800FD883C /* SuperSonicFly.m */,
+			);
+			name = Flight;
+			sourceTree = "<group>";
+		};
+		3B9762BE1AAD737D00FD883C /* Aircraft */ = {
+			isa = PBXGroup;
+			children = (
+				3B9762B61AAD707000FD883C /* Aircraft.h */,
+				3B9762B71AAD707000FD883C /* Aircraft.m */,
+				3B9762B91AAD709200FD883C /* Helicopter.h */,
+				3B9762BA1AAD709200FD883C /* Helicopter.m */,
+				3B9762BF1AAD739B00FD883C /* AirPlane.h */,
+				3B9762C01AAD739B00FD883C /* AirPlane.m */,
+				3B9762C21AAD73BE00FD883C /* Fighter.h */,
+				3B9762C31AAD73BE00FD883C /* Fighter.m */,
+				3B9762C51AAD73DE00FD883C /* Harrier.h */,
+				3B9762C61AAD73DE00FD883C /* Harrier.m */,
+			);
+			name = Aircraft;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B9762961AAD513600FD883C /* Strategy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B97629E1AAD513600FD883C /* Build configuration list for PBXNativeTarget "Strategy" */;
+			buildPhases = (
+				3B9762931AAD513600FD883C /* Sources */,
+				3B9762941AAD513600FD883C /* Frameworks */,
+				3B9762951AAD513600FD883C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Strategy;
+			productName = Strategy;
+			productReference = 3B9762971AAD513600FD883C /* Strategy */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B97628F1AAD513600FD883C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nihility;
+				TargetAttributes = {
+					3B9762961AAD513600FD883C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B9762921AAD513600FD883C /* Build configuration list for PBXProject "Strategy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B97628E1AAD513600FD883C;
+			productRefGroup = 3B9762981AAD513600FD883C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B9762961AAD513600FD883C /* Strategy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B9762931AAD513600FD883C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9762BB1AAD709200FD883C /* Helicopter.m in Sources */,
+				3B9762C11AAD739B00FD883C /* AirPlane.m in Sources */,
+				3B9762A31AAD6E4A00FD883C /* TakeOff.m in Sources */,
+				3B9762B81AAD707000FD883C /* Aircraft.m in Sources */,
+				3B9762AF1AAD6F9B00FD883C /* LongDistanceTakeOff.m in Sources */,
+				3B97629B1AAD513600FD883C /* main.m in Sources */,
+				3B9762C41AAD73BE00FD883C /* Fighter.m in Sources */,
+				3B9762B51AAD6FF800FD883C /* SuperSonicFly.m in Sources */,
+				3B9762B21AAD6FEA00FD883C /* SubSonicFly.m in Sources */,
+				3B9762C71AAD73DE00FD883C /* Harrier.m in Sources */,
+				3B9762A91AAD6ECE00FD883C /* VerticalTakeOff.m in Sources */,
+				3B9762A61AAD6E9900FD883C /* Flight.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3B97629C1AAD513600FD883C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3B97629D1AAD513600FD883C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3B97629F1AAD513600FD883C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3B9762A01AAD513600FD883C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B9762921AAD513600FD883C /* Build configuration list for PBXProject "Strategy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B97629C1AAD513600FD883C /* Debug */,
+				3B97629D1AAD513600FD883C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B97629E1AAD513600FD883C /* Build configuration list for PBXNativeTarget "Strategy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B97629F1AAD513600FD883C /* Debug */,
+				3B9762A01AAD513600FD883C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B97628F1AAD513600FD883C /* Project object */;
+}

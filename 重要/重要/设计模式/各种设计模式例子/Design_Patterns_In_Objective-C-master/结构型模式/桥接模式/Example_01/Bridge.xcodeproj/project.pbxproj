@@ -1,0 +1,307 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B8FD4AB1A9F01F500975531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4AA1A9F01F500975531 /* main.m */; };
+		3B8FD4B31A9F076500975531 /* HandsetSoft.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4B21A9F076500975531 /* HandsetSoft.m */; };
+		3B8FD4B61A9F079500975531 /* HandsetBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4B51A9F079500975531 /* HandsetBrand.m */; };
+		3B8FD4B91A9F07F000975531 /* QQMusic.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4B81A9F07F000975531 /* QQMusic.m */; };
+		3B8FD4BC1A9F082300975531 /* Samsung.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4BB1A9F082300975531 /* Samsung.m */; };
+		3B8FD4BF1A9F08FD00975531 /* Nokia.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4BE1A9F08FD00975531 /* Nokia.m */; };
+		3B8FD4C21A9F096C00975531 /* QQZone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B8FD4C11A9F096C00975531 /* QQZone.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B8FD4A51A9F01F500975531 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B8FD4A71A9F01F500975531 /* Bridge */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Bridge; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B8FD4AA1A9F01F500975531 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B8FD4B11A9F076500975531 /* HandsetSoft.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsetSoft.h; sourceTree = "<group>"; };
+		3B8FD4B21A9F076500975531 /* HandsetSoft.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsetSoft.m; sourceTree = "<group>"; };
+		3B8FD4B41A9F079500975531 /* HandsetBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HandsetBrand.h; sourceTree = "<group>"; };
+		3B8FD4B51A9F079500975531 /* HandsetBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HandsetBrand.m; sourceTree = "<group>"; };
+		3B8FD4B71A9F07F000975531 /* QQMusic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQMusic.h; sourceTree = "<group>"; };
+		3B8FD4B81A9F07F000975531 /* QQMusic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQMusic.m; sourceTree = "<group>"; };
+		3B8FD4BA1A9F082300975531 /* Samsung.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Samsung.h; sourceTree = "<group>"; };
+		3B8FD4BB1A9F082300975531 /* Samsung.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Samsung.m; sourceTree = "<group>"; };
+		3B8FD4BD1A9F08FD00975531 /* Nokia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Nokia.h; sourceTree = "<group>"; };
+		3B8FD4BE1A9F08FD00975531 /* Nokia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Nokia.m; sourceTree = "<group>"; };
+		3B8FD4C01A9F096C00975531 /* QQZone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQZone.h; sourceTree = "<group>"; };
+		3B8FD4C11A9F096C00975531 /* QQZone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQZone.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B8FD4A41A9F01F500975531 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B8FD49E1A9F01F500975531 = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4A91A9F01F500975531 /* Bridge */,
+				3B8FD4A81A9F01F500975531 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B8FD4A81A9F01F500975531 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4A71A9F01F500975531 /* Bridge */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B8FD4A91A9F01F500975531 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4C51A9F0A1700975531 /* Brand */,
+				3B8FD4C31A9F09CA00975531 /* Soft */,
+				3B8FD4AA1A9F01F500975531 /* main.m */,
+			);
+			path = Bridge;
+			sourceTree = "<group>";
+		};
+		3B8FD4C31A9F09CA00975531 /* Soft */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4C41A9F0A0D00975531 /* Abstract */,
+				3B8FD4B71A9F07F000975531 /* QQMusic.h */,
+				3B8FD4B81A9F07F000975531 /* QQMusic.m */,
+				3B8FD4C01A9F096C00975531 /* QQZone.h */,
+				3B8FD4C11A9F096C00975531 /* QQZone.m */,
+			);
+			name = Soft;
+			sourceTree = "<group>";
+		};
+		3B8FD4C41A9F0A0D00975531 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4B11A9F076500975531 /* HandsetSoft.h */,
+				3B8FD4B21A9F076500975531 /* HandsetSoft.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		3B8FD4C51A9F0A1700975531 /* Brand */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4C61A9F0A2000975531 /* Abstract */,
+				3B8FD4BA1A9F082300975531 /* Samsung.h */,
+				3B8FD4BB1A9F082300975531 /* Samsung.m */,
+				3B8FD4BD1A9F08FD00975531 /* Nokia.h */,
+				3B8FD4BE1A9F08FD00975531 /* Nokia.m */,
+			);
+			name = Brand;
+			sourceTree = "<group>";
+		};
+		3B8FD4C61A9F0A2000975531 /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				3B8FD4B41A9F079500975531 /* HandsetBrand.h */,
+				3B8FD4B51A9F079500975531 /* HandsetBrand.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B8FD4A61A9F01F500975531 /* Bridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B8FD4AE1A9F01F500975531 /* Build configuration list for PBXNativeTarget "Bridge" */;
+			buildPhases = (
+				3B8FD4A31A9F01F500975531 /* Sources */,
+				3B8FD4A41A9F01F500975531 /* Frameworks */,
+				3B8FD4A51A9F01F500975531 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bridge;
+			productName = Bridge;
+			productReference = 3B8FD4A71A9F01F500975531 /* Bridge */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B8FD49F1A9F01F500975531 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nihility;
+				TargetAttributes = {
+					3B8FD4A61A9F01F500975531 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B8FD4A21A9F01F500975531 /* Build configuration list for PBXProject "Bridge" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B8FD49E1A9F01F500975531;
+			productRefGroup = 3B8FD4A81A9F01F500975531 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B8FD4A61A9F01F500975531 /* Bridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B8FD4A31A9F01F500975531 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8FD4BF1A9F08FD00975531 /* Nokia.m in Sources */,
+				3B8FD4C21A9F096C00975531 /* QQZone.m in Sources */,
+				3B8FD4BC1A9F082300975531 /* Samsung.m in Sources */,
+				3B8FD4B61A9F079500975531 /* HandsetBrand.m in Sources */,
+				3B8FD4AB1A9F01F500975531 /* main.m in Sources */,
+				3B8FD4B31A9F076500975531 /* HandsetSoft.m in Sources */,
+				3B8FD4B91A9F07F000975531 /* QQMusic.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3B8FD4AC1A9F01F500975531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3B8FD4AD1A9F01F500975531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3B8FD4AF1A9F01F500975531 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3B8FD4B01A9F01F500975531 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B8FD4A21A9F01F500975531 /* Build configuration list for PBXProject "Bridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8FD4AC1A9F01F500975531 /* Debug */,
+				3B8FD4AD1A9F01F500975531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B8FD4AE1A9F01F500975531 /* Build configuration list for PBXNativeTarget "Bridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B8FD4AF1A9F01F500975531 /* Debug */,
+				3B8FD4B01A9F01F500975531 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B8FD49F1A9F01F500975531 /* Project object */;
+}

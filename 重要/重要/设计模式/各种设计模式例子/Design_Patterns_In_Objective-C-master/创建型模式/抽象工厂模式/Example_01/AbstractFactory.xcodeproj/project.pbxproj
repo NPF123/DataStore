@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BA290ED1AA156E800ECB2B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA290EC1AA156E800ECB2B3 /* main.m */; };
+		3BA291041AA15AE700ECB2B3 /* Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291031AA15AE700ECB2B3 /* Shop.m */; };
+		3BA291071AA15B0600ECB2B3 /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291061AA15B0600ECB2B3 /* Phone.m */; };
+		3BA2910A1AA15B0E00ECB2B3 /* TV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291091AA15B0E00ECB2B3 /* TV.m */; };
+		3BA2910E1AA15BC900ECB2B3 /* XiaoDongShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2910D1AA15BC900ECB2B3 /* XiaoDongShop.m */; };
+		3BA291121AA15BF600ECB2B3 /* XiaodongPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291111AA15BF600ECB2B3 /* XiaodongPhone.m */; };
+		3BA291151AA15DEE00ECB2B3 /* XiaodongTV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291141AA15DEE00ECB2B3 /* XiaodongTV.m */; };
+		3BA291191AA15FAB00ECB2B3 /* XiaohongPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA291181AA15FAB00ECB2B3 /* XiaohongPhone.m */; };
+		3BA2911C1AA15FCC00ECB2B3 /* XiaohongTV.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2911B1AA15FCC00ECB2B3 /* XiaohongTV.m */; };
+		3BA2911F1AA1601900ECB2B3 /* XiaoHongShop.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA2911E1AA1601900ECB2B3 /* XiaoHongShop.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BA290E71AA156E800ECB2B3 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3BA290E91AA156E800ECB2B3 /* AbstractFactory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AbstractFactory; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BA290EC1AA156E800ECB2B3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BA291021AA15AE700ECB2B3 /* Shop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shop.h; sourceTree = "<group>"; };
+		3BA291031AA15AE700ECB2B3 /* Shop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shop.m; sourceTree = "<group>"; };
+		3BA291051AA15B0600ECB2B3 /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		3BA291061AA15B0600ECB2B3 /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
+		3BA291081AA15B0E00ECB2B3 /* TV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TV.h; sourceTree = "<group>"; };
+		3BA291091AA15B0E00ECB2B3 /* TV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TV.m; sourceTree = "<group>"; };
+		3BA2910C1AA15BC900ECB2B3 /* XiaoDongShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaoDongShop.h; sourceTree = "<group>"; };
+		3BA2910D1AA15BC900ECB2B3 /* XiaoDongShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaoDongShop.m; sourceTree = "<group>"; };
+		3BA291101AA15BF600ECB2B3 /* XiaodongPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaodongPhone.h; sourceTree = "<group>"; };
+		3BA291111AA15BF600ECB2B3 /* XiaodongPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaodongPhone.m; sourceTree = "<group>"; };
+		3BA291131AA15DEE00ECB2B3 /* XiaodongTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaodongTV.h; sourceTree = "<group>"; };
+		3BA291141AA15DEE00ECB2B3 /* XiaodongTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaodongTV.m; sourceTree = "<group>"; };
+		3BA291171AA15FAB00ECB2B3 /* XiaohongPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaohongPhone.h; sourceTree = "<group>"; };
+		3BA291181AA15FAB00ECB2B3 /* XiaohongPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaohongPhone.m; sourceTree = "<group>"; };
+		3BA2911A1AA15FCC00ECB2B3 /* XiaohongTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaohongTV.h; sourceTree = "<group>"; };
+		3BA2911B1AA15FCC00ECB2B3 /* XiaohongTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaohongTV.m; sourceTree = "<group>"; };
+		3BA2911D1AA1601900ECB2B3 /* XiaoHongShop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XiaoHongShop.h; sourceTree = "<group>"; };
+		3BA2911E1AA1601900ECB2B3 /* XiaoHongShop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XiaoHongShop.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BA290E61AA156E800ECB2B3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BA290E01AA156E800ECB2B3 = {
+			isa = PBXGroup;
+			children = (
+				3BA290EB1AA156E800ECB2B3 /* AbstractFactory */,
+				3BA290EA1AA156E800ECB2B3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BA290EA1AA156E800ECB2B3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BA290E91AA156E800ECB2B3 /* AbstractFactory */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BA290EB1AA156E800ECB2B3 /* AbstractFactory */ = {
+			isa = PBXGroup;
+			children = (
+				3BA291161AA15F9100ECB2B3 /* XiaohongShop */,
+				3BA2910F1AA15BE600ECB2B3 /* XiaodongShop */,
+				3BA2910B1AA15BB200ECB2B3 /* Shop */,
+				3BA290EC1AA156E800ECB2B3 /* main.m */,
+				3BA291051AA15B0600ECB2B3 /* Phone.h */,
+				3BA291061AA15B0600ECB2B3 /* Phone.m */,
+				3BA291081AA15B0E00ECB2B3 /* TV.h */,
+				3BA291091AA15B0E00ECB2B3 /* TV.m */,
+			);
+			path = AbstractFactory;
+			sourceTree = "<group>";
+		};
+		3BA2910B1AA15BB200ECB2B3 /* Shop */ = {
+			isa = PBXGroup;
+			children = (
+				3BA291021AA15AE700ECB2B3 /* Shop.h */,
+				3BA291031AA15AE700ECB2B3 /* Shop.m */,
+				3BA2910C1AA15BC900ECB2B3 /* XiaoDongShop.h */,
+				3BA2910D1AA15BC900ECB2B3 /* XiaoDongShop.m */,
+				3BA2911D1AA1601900ECB2B3 /* XiaoHongShop.h */,
+				3BA2911E1AA1601900ECB2B3 /* XiaoHongShop.m */,
+			);
+			name = Shop;
+			sourceTree = "<group>";
+		};
+		3BA2910F1AA15BE600ECB2B3 /* XiaodongShop */ = {
+			isa = PBXGroup;
+			children = (
+				3BA291101AA15BF600ECB2B3 /* XiaodongPhone.h */,
+				3BA291111AA15BF600ECB2B3 /* XiaodongPhone.m */,
+				3BA291131AA15DEE00ECB2B3 /* XiaodongTV.h */,
+				3BA291141AA15DEE00ECB2B3 /* XiaodongTV.m */,
+			);
+			name = XiaodongShop;
+			sourceTree = "<group>";
+		};
+		3BA291161AA15F9100ECB2B3 /* XiaohongShop */ = {
+			isa = PBXGroup;
+			children = (
+				3BA291171AA15FAB00ECB2B3 /* XiaohongPhone.h */,
+				3BA291181AA15FAB00ECB2B3 /* XiaohongPhone.m */,
+				3BA2911A1AA15FCC00ECB2B3 /* XiaohongTV.h */,
+				3BA2911B1AA15FCC00ECB2B3 /* XiaohongTV.m */,
+			);
+			name = XiaohongShop;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BA290E81AA156E800ECB2B3 /* AbstractFactory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BA290F01AA156E800ECB2B3 /* Build configuration list for PBXNativeTarget "AbstractFactory" */;
+			buildPhases = (
+				3BA290E51AA156E800ECB2B3 /* Sources */,
+				3BA290E61AA156E800ECB2B3 /* Frameworks */,
+				3BA290E71AA156E800ECB2B3 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AbstractFactory;
+			productName = AbstractFactory;
+			productReference = 3BA290E91AA156E800ECB2B3 /* AbstractFactory */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BA290E11AA156E800ECB2B3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nihility;
+				TargetAttributes = {
+					3BA290E81AA156E800ECB2B3 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3BA290E41AA156E800ECB2B3 /* Build configuration list for PBXProject "AbstractFactory" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BA290E01AA156E800ECB2B3;
+			productRefGroup = 3BA290EA1AA156E800ECB2B3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BA290E81AA156E800ECB2B3 /* AbstractFactory */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BA290E51AA156E800ECB2B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BA291071AA15B0600ECB2B3 /* Phone.m in Sources */,
+				3BA291191AA15FAB00ECB2B3 /* XiaohongPhone.m in Sources */,
+				3BA2911F1AA1601900ECB2B3 /* XiaoHongShop.m in Sources */,
+				3BA2910A1AA15B0E00ECB2B3 /* TV.m in Sources */,
+				3BA290ED1AA156E800ECB2B3 /* main.m in Sources */,
+				3BA2910E1AA15BC900ECB2B3 /* XiaoDongShop.m in Sources */,
+				3BA291041AA15AE700ECB2B3 /* Shop.m in Sources */,
+				3BA291151AA15DEE00ECB2B3 /* XiaodongTV.m in Sources */,
+				3BA291121AA15BF600ECB2B3 /* XiaodongPhone.m in Sources */,
+				3BA2911C1AA15FCC00ECB2B3 /* XiaohongTV.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BA290EE1AA156E800ECB2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3BA290EF1AA156E800ECB2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3BA290F11AA156E800ECB2B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3BA290F21AA156E800ECB2B3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BA290E41AA156E800ECB2B3 /* Build configuration list for PBXProject "AbstractFactory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA290EE1AA156E800ECB2B3 /* Debug */,
+				3BA290EF1AA156E800ECB2B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BA290F01AA156E800ECB2B3 /* Build configuration list for PBXNativeTarget "AbstractFactory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BA290F11AA156E800ECB2B3 /* Debug */,
+				3BA290F21AA156E800ECB2B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BA290E11AA156E800ECB2B3 /* Project object */;
+}

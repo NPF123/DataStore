@@ -1,0 +1,282 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BDA8E391AC01B0000131C4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E291AC01A9200131C4D /* main.m */; };
+		3BDA8E3A1AC01B1000131C4D /* UIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E2B1AC01A9200131C4D /* UIButton.m */; };
+		3BDA8E3B1AC01B1300131C4D /* UILabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E2D1AC01A9200131C4D /* UILabel.m */; };
+		3BDA8E401AC01B1900131C4D /* UISwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E2F1AC01A9200131C4D /* UISwitch.m */; };
+		3BDA8E411AC01B1900131C4D /* UITableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E311AC01A9200131C4D /* UITableView.m */; };
+		3BDA8E421AC01B1900131C4D /* UITextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E331AC01A9200131C4D /* UITextView.m */; };
+		3BDA8E431AC01B1900131C4D /* UIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E351AC01A9200131C4D /* UIViewController.m */; };
+		3BDA8E441AC01B1900131C4D /* Mediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDA8E371AC01ABE00131C4D /* Mediator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3BDA8E0A1AC016C200131C4D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3BDA8E0C1AC016C200131C4D /* Example_02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example_02; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BDA8E291AC01A9200131C4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BDA8E2A1AC01A9200131C4D /* UIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIButton.h; sourceTree = "<group>"; };
+		3BDA8E2B1AC01A9200131C4D /* UIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIButton.m; sourceTree = "<group>"; };
+		3BDA8E2C1AC01A9200131C4D /* UILabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UILabel.h; sourceTree = "<group>"; };
+		3BDA8E2D1AC01A9200131C4D /* UILabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UILabel.m; sourceTree = "<group>"; };
+		3BDA8E2E1AC01A9200131C4D /* UISwitch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UISwitch.h; sourceTree = "<group>"; };
+		3BDA8E2F1AC01A9200131C4D /* UISwitch.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UISwitch.m; sourceTree = "<group>"; };
+		3BDA8E301AC01A9200131C4D /* UITableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITableView.h; sourceTree = "<group>"; };
+		3BDA8E311AC01A9200131C4D /* UITableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableView.m; sourceTree = "<group>"; };
+		3BDA8E321AC01A9200131C4D /* UITextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UITextView.h; sourceTree = "<group>"; };
+		3BDA8E331AC01A9200131C4D /* UITextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITextView.m; sourceTree = "<group>"; };
+		3BDA8E341AC01A9200131C4D /* UIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewController.h; sourceTree = "<group>"; };
+		3BDA8E351AC01A9200131C4D /* UIViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIViewController.m; sourceTree = "<group>"; };
+		3BDA8E361AC01ABE00131C4D /* Mediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mediator.h; sourceTree = "<group>"; };
+		3BDA8E371AC01ABE00131C4D /* Mediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mediator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3BDA8E091AC016C200131C4D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BDA8E031AC016C200131C4D = {
+			isa = PBXGroup;
+			children = (
+				3BDA8E281AC01A9200131C4D /* Example_02 */,
+				3BDA8E0D1AC016C200131C4D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3BDA8E0D1AC016C200131C4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3BDA8E0C1AC016C200131C4D /* Example_02 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3BDA8E281AC01A9200131C4D /* Example_02 */ = {
+			isa = PBXGroup;
+			children = (
+				3BDA8E291AC01A9200131C4D /* main.m */,
+				3BDA8E2A1AC01A9200131C4D /* UIButton.h */,
+				3BDA8E2B1AC01A9200131C4D /* UIButton.m */,
+				3BDA8E2C1AC01A9200131C4D /* UILabel.h */,
+				3BDA8E2D1AC01A9200131C4D /* UILabel.m */,
+				3BDA8E2E1AC01A9200131C4D /* UISwitch.h */,
+				3BDA8E2F1AC01A9200131C4D /* UISwitch.m */,
+				3BDA8E301AC01A9200131C4D /* UITableView.h */,
+				3BDA8E311AC01A9200131C4D /* UITableView.m */,
+				3BDA8E321AC01A9200131C4D /* UITextView.h */,
+				3BDA8E331AC01A9200131C4D /* UITextView.m */,
+				3BDA8E341AC01A9200131C4D /* UIViewController.h */,
+				3BDA8E351AC01A9200131C4D /* UIViewController.m */,
+				3BDA8E361AC01ABE00131C4D /* Mediator.h */,
+				3BDA8E371AC01ABE00131C4D /* Mediator.m */,
+			);
+			path = Example_02;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3BDA8E0B1AC016C200131C4D /* Example_02 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3BDA8E131AC016C200131C4D /* Build configuration list for PBXNativeTarget "Example_02" */;
+			buildPhases = (
+				3BDA8E081AC016C200131C4D /* Sources */,
+				3BDA8E091AC016C200131C4D /* Frameworks */,
+				3BDA8E0A1AC016C200131C4D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example_02;
+			productName = Example_01;
+			productReference = 3BDA8E0C1AC016C200131C4D /* Example_02 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3BDA8E041AC016C200131C4D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Weiming Bi";
+				TargetAttributes = {
+					3BDA8E0B1AC016C200131C4D = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3BDA8E071AC016C200131C4D /* Build configuration list for PBXProject "Example_02" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3BDA8E031AC016C200131C4D;
+			productRefGroup = 3BDA8E0D1AC016C200131C4D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3BDA8E0B1AC016C200131C4D /* Example_02 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3BDA8E081AC016C200131C4D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BDA8E3A1AC01B1000131C4D /* UIButton.m in Sources */,
+				3BDA8E421AC01B1900131C4D /* UITextView.m in Sources */,
+				3BDA8E441AC01B1900131C4D /* Mediator.m in Sources */,
+				3BDA8E401AC01B1900131C4D /* UISwitch.m in Sources */,
+				3BDA8E391AC01B0000131C4D /* main.m in Sources */,
+				3BDA8E411AC01B1900131C4D /* UITableView.m in Sources */,
+				3BDA8E431AC01B1900131C4D /* UIViewController.m in Sources */,
+				3BDA8E3B1AC01B1300131C4D /* UILabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3BDA8E111AC016C200131C4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3BDA8E121AC016C200131C4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3BDA8E141AC016C200131C4D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Example_02;
+			};
+			name = Debug;
+		};
+		3BDA8E151AC016C200131C4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = Example_02;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3BDA8E071AC016C200131C4D /* Build configuration list for PBXProject "Example_02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BDA8E111AC016C200131C4D /* Debug */,
+				3BDA8E121AC016C200131C4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3BDA8E131AC016C200131C4D /* Build configuration list for PBXNativeTarget "Example_02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3BDA8E141AC016C200131C4D /* Debug */,
+				3BDA8E151AC016C200131C4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3BDA8E041AC016C200131C4D /* Project object */;
+}

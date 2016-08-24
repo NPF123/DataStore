@@ -1,0 +1,302 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3B151C491AA0021700218F6C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C481AA0021700218F6C /* main.m */; };
+		3B151C511AA0052400218F6C /* Student.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C501AA0052400218F6C /* Student.m */; };
+		3B151C541AA005B700218F6C /* Jack.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C531AA005B700218F6C /* Jack.m */; };
+		3B151C571AA0064700218F6C /* Mediator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C561AA0064700218F6C /* Mediator.m */; };
+		3B151C5A1AA0069200218F6C /* Sam.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C591AA0069200218F6C /* Sam.m */; };
+		3B151C5D1AA0084600218F6C /* Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B151C5C1AA0084600218F6C /* Phone.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B151C431AA0021700218F6C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3B151C451AA0021700218F6C /* Mediator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Mediator; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B151C481AA0021700218F6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3B151C4F1AA0052400218F6C /* Student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Student.h; sourceTree = "<group>"; };
+		3B151C501AA0052400218F6C /* Student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Student.m; sourceTree = "<group>"; };
+		3B151C521AA005B700218F6C /* Jack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Jack.h; sourceTree = "<group>"; };
+		3B151C531AA005B700218F6C /* Jack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Jack.m; sourceTree = "<group>"; };
+		3B151C551AA0064700218F6C /* Mediator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mediator.h; sourceTree = "<group>"; };
+		3B151C561AA0064700218F6C /* Mediator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mediator.m; sourceTree = "<group>"; };
+		3B151C581AA0069200218F6C /* Sam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sam.h; sourceTree = "<group>"; };
+		3B151C591AA0069200218F6C /* Sam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sam.m; sourceTree = "<group>"; };
+		3B151C5B1AA0084600218F6C /* Phone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Phone.h; sourceTree = "<group>"; };
+		3B151C5C1AA0084600218F6C /* Phone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Phone.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B151C421AA0021700218F6C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B151C3C1AA0021700218F6C = {
+			isa = PBXGroup;
+			children = (
+				3B151C471AA0021700218F6C /* Mediator */,
+				3B151C461AA0021700218F6C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3B151C461AA0021700218F6C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C451AA0021700218F6C /* Mediator */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3B151C471AA0021700218F6C /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C601AA00EB300218F6C /* Mediator */,
+				3B151C5E1AA00E9C00218F6C /* Student */,
+				3B151C481AA0021700218F6C /* main.m */,
+			);
+			path = Mediator;
+			sourceTree = "<group>";
+		};
+		3B151C5E1AA00E9C00218F6C /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C5F1AA00EA900218F6C /* Abstract */,
+				3B151C521AA005B700218F6C /* Jack.h */,
+				3B151C531AA005B700218F6C /* Jack.m */,
+				3B151C581AA0069200218F6C /* Sam.h */,
+				3B151C591AA0069200218F6C /* Sam.m */,
+			);
+			name = Student;
+			sourceTree = "<group>";
+		};
+		3B151C5F1AA00EA900218F6C /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C4F1AA0052400218F6C /* Student.h */,
+				3B151C501AA0052400218F6C /* Student.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		3B151C601AA00EB300218F6C /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C611AA00EBA00218F6C /* Abstract */,
+				3B151C5B1AA0084600218F6C /* Phone.h */,
+				3B151C5C1AA0084600218F6C /* Phone.m */,
+			);
+			name = Mediator;
+			sourceTree = "<group>";
+		};
+		3B151C611AA00EBA00218F6C /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				3B151C551AA0064700218F6C /* Mediator.h */,
+				3B151C561AA0064700218F6C /* Mediator.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B151C441AA0021700218F6C /* Mediator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B151C4C1AA0021700218F6C /* Build configuration list for PBXNativeTarget "Mediator" */;
+			buildPhases = (
+				3B151C411AA0021700218F6C /* Sources */,
+				3B151C421AA0021700218F6C /* Frameworks */,
+				3B151C431AA0021700218F6C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Mediator;
+			productName = Mediator;
+			productReference = 3B151C451AA0021700218F6C /* Mediator */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3B151C3D1AA0021700218F6C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Nihility;
+				TargetAttributes = {
+					3B151C441AA0021700218F6C = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = 3B151C401AA0021700218F6C /* Build configuration list for PBXProject "Mediator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3B151C3C1AA0021700218F6C;
+			productRefGroup = 3B151C461AA0021700218F6C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3B151C441AA0021700218F6C /* Mediator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B151C411AA0021700218F6C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B151C5D1AA0084600218F6C /* Phone.m in Sources */,
+				3B151C491AA0021700218F6C /* main.m in Sources */,
+				3B151C511AA0052400218F6C /* Student.m in Sources */,
+				3B151C571AA0064700218F6C /* Mediator.m in Sources */,
+				3B151C5A1AA0069200218F6C /* Sam.m in Sources */,
+				3B151C541AA005B700218F6C /* Jack.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3B151C4A1AA0021700218F6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3B151C4B1AA0021700218F6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3B151C4D1AA0021700218F6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3B151C4E1AA0021700218F6C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B151C401AA0021700218F6C /* Build configuration list for PBXProject "Mediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B151C4A1AA0021700218F6C /* Debug */,
+				3B151C4B1AA0021700218F6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3B151C4C1AA0021700218F6C /* Build configuration list for PBXNativeTarget "Mediator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B151C4D1AA0021700218F6C /* Debug */,
+				3B151C4E1AA0021700218F6C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3B151C3D1AA0021700218F6C /* Project object */;
+}

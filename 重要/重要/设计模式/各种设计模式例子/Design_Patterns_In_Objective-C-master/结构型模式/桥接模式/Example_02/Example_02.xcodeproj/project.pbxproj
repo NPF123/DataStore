@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B40657C41CD0B00A005BAD46 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657C31CD0B00A005BAD46 /* main.m */; };
+		B40657CE1CD0B052005BAD46 /* Method.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657CD1CD0B052005BAD46 /* Method.m */; };
+		B40657D11CD0B079005BAD46 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657D01CD0B079005BAD46 /* Message.m */; };
+		B40657D71CD0B297005BAD46 /* SMSMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657D61CD0B297005BAD46 /* SMSMethod.m */; };
+		B40657DA1CD0B2FB005BAD46 /* MailMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657D91CD0B2FB005BAD46 /* MailMethod.m */; };
+		B40657DD1CD0B33D005BAD46 /* CommonMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657DC1CD0B33D005BAD46 /* CommonMessage.m */; };
+		B40657E01CD0B37D005BAD46 /* UrgencyMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657DF1CD0B37D005BAD46 /* UrgencyMessage.m */; };
+		B40657E31CD0B4BA005BAD46 /* SpecialUrgencyMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657E21CD0B4BA005BAD46 /* SpecialUrgencyMessage.m */; };
+		B40657E61CD0B697005BAD46 /* MobileMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = B40657E51CD0B697005BAD46 /* MobileMethod.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B40657BE1CD0B00A005BAD46 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B40657C01CD0B00A005BAD46 /* Example_02 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Example_02; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40657C31CD0B00A005BAD46 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B40657CC1CD0B052005BAD46 /* Method.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Method.h; sourceTree = "<group>"; };
+		B40657CD1CD0B052005BAD46 /* Method.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Method.m; sourceTree = "<group>"; };
+		B40657CF1CD0B079005BAD46 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		B40657D01CD0B079005BAD46 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		B40657D51CD0B297005BAD46 /* SMSMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMSMethod.h; sourceTree = "<group>"; };
+		B40657D61CD0B297005BAD46 /* SMSMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMSMethod.m; sourceTree = "<group>"; };
+		B40657D81CD0B2FB005BAD46 /* MailMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailMethod.h; sourceTree = "<group>"; };
+		B40657D91CD0B2FB005BAD46 /* MailMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailMethod.m; sourceTree = "<group>"; };
+		B40657DB1CD0B33D005BAD46 /* CommonMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMessage.h; sourceTree = "<group>"; };
+		B40657DC1CD0B33D005BAD46 /* CommonMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonMessage.m; sourceTree = "<group>"; };
+		B40657DE1CD0B37D005BAD46 /* UrgencyMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrgencyMessage.h; sourceTree = "<group>"; };
+		B40657DF1CD0B37D005BAD46 /* UrgencyMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UrgencyMessage.m; sourceTree = "<group>"; };
+		B40657E11CD0B4BA005BAD46 /* SpecialUrgencyMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpecialUrgencyMessage.h; sourceTree = "<group>"; };
+		B40657E21CD0B4BA005BAD46 /* SpecialUrgencyMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpecialUrgencyMessage.m; sourceTree = "<group>"; };
+		B40657E41CD0B697005BAD46 /* MobileMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobileMethod.h; sourceTree = "<group>"; };
+		B40657E51CD0B697005BAD46 /* MobileMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MobileMethod.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B40657BD1CD0B00A005BAD46 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B40657B71CD0B00A005BAD46 = {
+			isa = PBXGroup;
+			children = (
+				B40657C21CD0B00A005BAD46 /* Example_02 */,
+				B40657C11CD0B00A005BAD46 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B40657C11CD0B00A005BAD46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B40657C01CD0B00A005BAD46 /* Example_02 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B40657C21CD0B00A005BAD46 /* Example_02 */ = {
+			isa = PBXGroup;
+			children = (
+				B40657CB1CD0B034005BAD46 /* Message */,
+				B40657CA1CD0B032005BAD46 /* Method */,
+				B40657C31CD0B00A005BAD46 /* main.m */,
+			);
+			path = Example_02;
+			sourceTree = "<group>";
+		};
+		B40657CA1CD0B032005BAD46 /* Method */ = {
+			isa = PBXGroup;
+			children = (
+				B40657CC1CD0B052005BAD46 /* Method.h */,
+				B40657CD1CD0B052005BAD46 /* Method.m */,
+				B40657D51CD0B297005BAD46 /* SMSMethod.h */,
+				B40657D61CD0B297005BAD46 /* SMSMethod.m */,
+				B40657D81CD0B2FB005BAD46 /* MailMethod.h */,
+				B40657D91CD0B2FB005BAD46 /* MailMethod.m */,
+				B40657E41CD0B697005BAD46 /* MobileMethod.h */,
+				B40657E51CD0B697005BAD46 /* MobileMethod.m */,
+			);
+			name = Method;
+			sourceTree = "<group>";
+		};
+		B40657CB1CD0B034005BAD46 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				B40657CF1CD0B079005BAD46 /* Message.h */,
+				B40657D01CD0B079005BAD46 /* Message.m */,
+				B40657DB1CD0B33D005BAD46 /* CommonMessage.h */,
+				B40657DC1CD0B33D005BAD46 /* CommonMessage.m */,
+				B40657DE1CD0B37D005BAD46 /* UrgencyMessage.h */,
+				B40657DF1CD0B37D005BAD46 /* UrgencyMessage.m */,
+				B40657E11CD0B4BA005BAD46 /* SpecialUrgencyMessage.h */,
+				B40657E21CD0B4BA005BAD46 /* SpecialUrgencyMessage.m */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B40657BF1CD0B00A005BAD46 /* Example_02 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B40657C71CD0B00A005BAD46 /* Build configuration list for PBXNativeTarget "Example_02" */;
+			buildPhases = (
+				B40657BC1CD0B00A005BAD46 /* Sources */,
+				B40657BD1CD0B00A005BAD46 /* Frameworks */,
+				B40657BE1CD0B00A005BAD46 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Example_02;
+			productName = Example_02;
+			productReference = B40657C01CD0B00A005BAD46 /* Example_02 */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B40657B81CD0B00A005BAD46 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Nihility-Ming";
+				TargetAttributes = {
+					B40657BF1CD0B00A005BAD46 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = B40657BB1CD0B00A005BAD46 /* Build configuration list for PBXProject "Example_02" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B40657B71CD0B00A005BAD46;
+			productRefGroup = B40657C11CD0B00A005BAD46 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B40657BF1CD0B00A005BAD46 /* Example_02 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B40657BC1CD0B00A005BAD46 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B40657CE1CD0B052005BAD46 /* Method.m in Sources */,
+				B40657D11CD0B079005BAD46 /* Message.m in Sources */,
+				B40657D71CD0B297005BAD46 /* SMSMethod.m in Sources */,
+				B40657C41CD0B00A005BAD46 /* main.m in Sources */,
+				B40657DD1CD0B33D005BAD46 /* CommonMessage.m in Sources */,
+				B40657E31CD0B4BA005BAD46 /* SpecialUrgencyMessage.m in Sources */,
+				B40657E01CD0B37D005BAD46 /* UrgencyMessage.m in Sources */,
+				B40657E61CD0B697005BAD46 /* MobileMethod.m in Sources */,
+				B40657DA1CD0B2FB005BAD46 /* MailMethod.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B40657C51CD0B00A005BAD46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B40657C61CD0B00A005BAD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B40657C81CD0B00A005BAD46 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B40657C91CD0B00A005BAD46 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B40657BB1CD0B00A005BAD46 /* Build configuration list for PBXProject "Example_02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40657C51CD0B00A005BAD46 /* Debug */,
+				B40657C61CD0B00A005BAD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B40657C71CD0B00A005BAD46 /* Build configuration list for PBXNativeTarget "Example_02" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B40657C81CD0B00A005BAD46 /* Debug */,
+				B40657C91CD0B00A005BAD46 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B40657B81CD0B00A005BAD46 /* Project object */;
+}
